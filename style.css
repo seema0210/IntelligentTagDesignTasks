@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.home {
+    background-color: #f6f1f1;
+    max-width: 24rem;
+}
+
+nav .fa-angle-left {
+    color: rgb(6, 208, 6);
+    padding: 0.5rem 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.home-body {
+    padding: 1.8rem 2.7rem 2.7rem 2.7rem;
+}
+
+.home-nav {
+    margin: 0 0 1.5rem 0;
+    line-height: 1.4;
+}
+
+.home-nav p {
+    font-size: 0.7rem;
+}
+
+.home-nav .navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-nav .navbar h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0 1.3rem 0 0;
+}
+
+.home-body h1 {
+    font-size: 1.4rem;
+}
+
+.text-amount {
+    border: 3px solid rgb(255, 193, 7);
+    margin: 1rem 1rem;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+}
+
+.text-amount h1 {
+    font-size: 1.5rem;
+    text-align: end;
+}
+
+.percentage-data {
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 0.3rem 1rem; */
+}
+
+.percentage {
+    background-color: rgb(255, 193, 7);
+    border-radius: 50%;
+    padding: 0.5rem;
+    height: 35px;
+}
+
+.percentage h4 {
+    font-size: 0.9rem;
+}
+
+.percentage p {
+    font-size: 0.7rem;
+}
+
+.percentage .other {
+    font-size: 0.7rem;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-amount {
+    margin: 0 1.5rem 6.5rem 1.5rem;
+}
+
+.show-amount h1 {
+    background-color: rgb(255, 193, 7);
+    border-radius: 0.2rem;
+    padding: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+    border: 3px solid rgb(6, 208, 6);
+}
+
+.show-amount p {
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recet {
+    display: flex;
+    align-items: center;
+}
+
+.recet p {
+    font-size: 0.7rem;
+    background-color: rgba(193, 146, 3, 0.663);
+    padding: 0.2rem;
+    margin: 0 0.2rem;
+}
+
+.comps-apply {
+    display: flex;
+    align-items: center;
+}
+
+.comps-apply p {
+    font-size: 0.7rem;
+    margin: 0 0.2rem;
+}
+
+.fa-calculator,
+.fa-file-invoice {
+    background-color: rgba(193, 146, 3, 0.663);
+    padding: 0.6rem;
+    font-size: 1.3rem;
+}
