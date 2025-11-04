@@ -4,28 +4,37 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: #ddd;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .home {
     background-color: #f6f1f1;
-    max-width: 24rem;
+    width: 90vw;
+    
 }
 
 nav .fa-angle-left {
     color: rgb(6, 208, 6);
-    padding: 0.5rem 0 0 0.5rem;
-    font-size: 1.5rem;
+    padding: 1vw;
+    font-size: 6vw;
 }
 
 .home-body {
-    padding: 1.8rem 2.7rem 2.7rem 2.7rem;
+    padding: 3vh;
 }
 
 .home-nav {
-    margin: 0 0 1.5rem 0;
+    margin-bottom: 2vh;
     line-height: 1.4;
 }
 
 .home-nav p {
-    font-size: 0.7rem;
+    font-size: 3vw;
 }
 
 .home-nav .navbar {
@@ -35,70 +44,69 @@ nav .fa-angle-left {
 
 .home-nav .navbar h1 {
     font-weight: 500;
-    font-size: 1.2rem;
-    padding: 0 1.3rem 0 0;
+    font-size: 4vw;
 }
 
 .home-body h1 {
-    font-size: 1.4rem;
+    font-size: 4.5vw;
+    margin-top: 2vh;
 }
 
 .text-amount {
-    border: 3px solid rgb(255, 193, 7);
-    margin: 1rem 1rem;
-    border-radius: 0.4rem;
-    padding: 0.6rem;
+    border: 0.4vh solid rgb(255, 193, 7);
+    margin: 2vh 0;
+    border-radius: 0.5rem;
+    padding: 1vh 2vw;
 }
 
 .text-amount h1 {
-    font-size: 1.5rem;
+    font-size: 5vw;
     text-align: end;
 }
 
 .percentage-data {
     display: flex;
     justify-content: space-evenly;
-    /* margin: 0.3rem 1rem; */
+    flex-wrap: wrap;
+    gap: 2vw;
 }
 
 .percentage {
     background-color: rgb(255, 193, 7);
     border-radius: 50%;
-    padding: 0.5rem;
-    height: 35px;
-}
-
-.percentage h4 {
-    font-size: 0.9rem;
-}
-
-.percentage p {
-    font-size: 0.7rem;
-}
-
-.percentage .other {
-    font-size: 0.7rem;
-    height: 35px;
+    width: 12vw;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.percentage h4, .other {
+    font-size: 3.5vw;
+}
+
+.percentage p {
+    font-size: 3vw;
 }
 
 .show-amount {
-    margin: 0 1.5rem 6.5rem 1.5rem;
+    margin: 4vh;
 }
 
 .show-amount h1 {
     background-color: rgb(255, 193, 7);
     border-radius: 0.2rem;
-    padding: 0.7rem;
+    padding: 1vh;
     font-weight: 500;
     text-align: center;
-    border: 3px solid rgb(6, 208, 6);
+    border: 0.4vh solid rgb(6, 208, 6);
 }
 
 .show-amount p {
-    font-size: 0.7rem;
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem); 
     text-align: center;
     margin-top: 0.4rem;
 }
@@ -106,33 +114,23 @@ nav .fa-angle-left {
 footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.recet {
+.recet, .comps-apply {
     display: flex;
     align-items: center;
 }
 
-.recet p {
-    font-size: 0.7rem;
+.recet p,  .comps-apply p{
+    font-size: 3vw;
     background-color: rgba(193, 146, 3, 0.663);
-    padding: 0.2rem;
-    margin: 0 0.2rem;
-}
-
-.comps-apply {
-    display: flex;
-    align-items: center;
-}
-
-.comps-apply p {
-    font-size: 0.7rem;
-    margin: 0 0.2rem;
+    margin: 0 1vw;
 }
 
 .fa-calculator,
 .fa-file-invoice {
     background-color: rgba(193, 146, 3, 0.663);
-    padding: 0.6rem;
-    font-size: 1.3rem;
+    padding: 1vh;
+    font-size: 5vw;
 }
