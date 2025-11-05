@@ -37,8 +37,8 @@
 .val-btn{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    padding: 7vw;
+    gap: 2vw;
+    padding: 5vw;
     justify-content: center; 
     align-items: center;
     width: fit-content; 
@@ -59,7 +59,7 @@
 }
 
  .colse-popup{
-    margin-top: 8vh;
+    margin-top: 7vh;
     width: 50vw;
     display: block;
     margin-left: auto;
