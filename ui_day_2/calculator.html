@@ -11,18 +11,9 @@
 
 <body>
     <div>
-        <div>
-            <button type="button" class="open-popup" id="openPopupBtn">
-                Open Calculator
-            </button>
-        </div>
-        <div id="popupOverlay">
-            
             <div class="popup-overlay">
                 <header>
-                    <i class="fa-solid fa-xmark cancel-icon" id="closePopupBtn"></i>
                     <h1> Enter the amount to tip 
-                       
                     </h1>
                     <input type="text" value="_">
                 </header>
@@ -65,28 +56,10 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="colse-popup" id="closePopupBtn">Done</button>
         </div>
+        <button type="button" class="colse-popup" id="closePopupBtn">Done</button>
 
     </div>
-
-    <script>
-        const openPopupBtn = document.getElementById('openPopupBtn')
-        const closePopupBtn = document.getElementById('closePopupBtn')
-
-        openPopupBtn.addEventListener('click', () => {
-            popupOverlay.style.display = 'block';
-            closePopupBtn.style.display = 'block'
-            openPopupBtn.style.display = 'none'
-        })
-
-        closePopupBtn.addEventListener('click', () => {
-            popupOverlay.style.display = 'none'
-            closePopupBtn.style.display = 'none'
-            openPopupBtn.style.display = 'flex'
-        })
-
-    </script>
 </body>
 
 </html>

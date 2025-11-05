@@ -134,3 +134,33 @@ footer {
     padding: 1vh;
     font-size: 5vw;
 }
+
+
+#popupOverlay {
+   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #110f0fda; 
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;     
+}
+.calc-frame {
+  width: 60vw;
+  height: 60vh;
+  border: none;
+  border-radius: 20px;
+
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 3vh;
+  right: 10vw;
+  font-size: 3vw;
+  color: white;
+  cursor: pointer;
+}

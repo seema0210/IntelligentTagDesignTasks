@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+
 </head>
 
 <body>
@@ -41,7 +43,9 @@
                     <p>$25.00</p>
                 </div>
                 <div class="percentage">
-                    <h4 class="other">OTHER</h4>
+                    <h4 class="other" id="openPopup">
+                        OTHER
+                    </h4>
                 </div>
             </div>
         </div>
@@ -62,7 +66,28 @@
                 <i class="fa-solid fa-file-invoice"></i>
             </div>
         </footer>
-    </div>
+
+
+        <div id="popupOverlay">
+            <!-- <div class="popup-content"> -->
+                <i class="fa-solid fa-xmark cancel-icon" id="closePopupBtn"></i>
+                <iframe src="./ui_day_2/calculator.html" class="calc-frame" title="Calculator"></iframe>
+            <!-- </div> -->
+        </div>
+
+        <script>
+            const openPopup = document.getElementById("openPopup");
+            const popupOverlay = document.getElementById("popupOverlay");
+            const closePopup = document.getElementById("closePopupBtn");
+
+            openPopup.addEventListener("click", () => {
+                popupOverlay.style.display = "flex";
+            });
+
+            closePopup.addEventListener("click", () => {
+                popupOverlay.style.display = "none";
+            });
+        </script>
 
 </body>
 

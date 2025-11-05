@@ -4,43 +4,32 @@
     font-family: sans-serif;
 }
 
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .popup-overlay{
     background-color: #f3efef; 
     border-radius: 7px;
-    width: 35vw;
-}
-#popupOverlay {
-    
-    display: none;
-    position: relative;
-    /* background-color: rgb(250, 246, 246); */
-        
-}
-
-#closePopup{
-    display: none;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    padding: 3vw;
 }
 
 .popup-overlay header{
-    padding: 1vw;
-    line-height: 1.5;
+    padding: 2vw;
+    line-height: 1.2;
     background-color: rgb(235, 229, 229);
     
 }
 .popup-overlay header h1{
-    font-size: 2.3vw;
+    font-size: 5.5vw;
     text-align: center;
 }
 .popup-overlay header input{
     border: none;
-    font-size: 3.5vw;
-    padding: 1vw;
+    font-size: 7vw;
+    padding: 0.5vw;
     background-color: rgb(235, 229, 229);
     text-align: right;
     width: 90%;
@@ -48,43 +37,36 @@ body{
 .val-btn{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1vw;
-    /* gap: 1vh; */
-    padding: 2vw;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
+    gap: 3vw;
+    padding: 7vw;
+    justify-content: center; 
+    align-items: center;
+    width: fit-content; 
+    margin: 0 auto;
+    flex-grow: 1; 
     
 }
 .val-btn .values{
     background-color: aliceblue;
-    width: 8vw;
-    height: 7vh;
+    width: 18vw;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3vw;
+    font-size: 6.5vw;
     font-weight: 500;
     border-radius: 1vw;
 }
-.colse-popup, .open-popup {
-    font-size: 2vw;
-    padding: 1vw;
-    background-color: rgb(255, 193, 7);
-    border: none;
-    cursor: pointer;
-}
+
  .colse-popup{
-    margin-top: 3vh;
-    width: 19vw;
+    margin-top: 8vh;
+    width: 50vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    font-size: 5vw;
+    font-weight: 600;
+    padding: 3vw;
+    background-color: rgb(255, 193, 7);
     
-}
-.cancel-icon{
-    text-align: end;
-    cursor: pointer;
-    font-size: 3vw;
-    color: gray;
 }
