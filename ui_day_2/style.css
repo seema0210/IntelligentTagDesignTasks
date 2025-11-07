@@ -4,69 +4,74 @@
     font-family: sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
 
 .popup-overlay{
-    background-color: #f3efef; 
+    background-color: lightgray; 
     border-radius: 7px;
-    /* width: 100vw; */
-    /* height: 100vh; */
-    height: 100%; 
+    height: 90%; 
     display: flex;
     flex-direction: column;
-    padding: 3vw;
 }
 
 .popup-overlay header{
-    padding: 2vw;
-    line-height: 1.2;
-    background-color: rgb(235, 229, 229);
+    padding: 1vh 0;
+    line-height: 1.7;
+    background-color: rgb(197, 195, 195);
     
 }
 .popup-overlay header h1{
-    font-size: 5.5vw;
+    opacity: 0.8;
+    font-size: 6.5vw;
     text-align: center;
 }
 .popup-overlay header input{
     border: none;
-    font-size: 7vw;
-    padding: 0.5vw;
-    background-color: rgb(235, 229, 229);
+    font-size: 10vw;
+    padding: 3vh 0.5vw;
+    background-color: rgb(197, 195, 195);
     text-align: right;
-    width: 90%;
+    width: 87%;
 }
 .val-btn{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    padding: 7vw;
-    justify-content: center; 
-    align-items: center;
-    width: fit-content; 
+    padding: 4vh 6vw;
+    width: 94%;
     margin: 0 auto;
-    flex-grow: 1; 
+    justify-content: center;
     
 }
 .val-btn .values{
-    background-color: aliceblue;
-    width: 18vw;
-    height: 12vh;
+    background-color: rgb(230, 233, 235);
+    width: 80%; 
+    aspect-ratio: 1 / 1;
+     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 6.5vw;
-    font-weight: 500;
+    font-size: 7.5vw;
+    font-weight: 600;
     border-radius: 1vw;
 }
 
+.val-btn .cancel{
+    font-size: 6.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
  .colse-popup{
-    margin-top: 8vh;
-    width: 50vw;
+    margin-top: 3vh;
+    width: 60vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 5vw;
-    font-weight: 600;
+    font-size: 6vw;
     padding: 3vw;
     background-color: rgb(255, 193, 7);
-    
+    border: none;
 }

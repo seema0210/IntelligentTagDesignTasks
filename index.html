@@ -23,36 +23,38 @@
                     <h1>Check Subtotal :</h1>
                     <h1>$XX.XX</h1>
                 </div>
-                <P>Tip is based on the full check before comps or discount</P>
+                <P>Tip is based on the full check before comps or discounts</P>
             </div>
-            <h1>Choose the ammount to tip</h1>
-            <div class="text-amount">
-                <h1>$20.00</h1>
-            </div>
-            <div class="percentage-data">
-                <div class="percentage">
-                    <h4>15%</h4>
-                    <p>$15.00</p>
+            <div class="home-amount">
+                <h1>Choose the ammount to tip</h1>
+                <div class="text-amount">
+                    <h1>$20.00</h1>
                 </div>
-                <div class="percentage">
-                    <h4>20%</h4>
-                    <p>$20.00</p>
-                </div>
-                <div class="percentage">
-                    <h4>25%</h4>
-                    <p>$25.00</p>
-                </div>
-                <div class="percentage">
-                    <h4 class="other" id="openPopup">
-                        OTHER
-                    </h4>
+                <div class="percentage-data">
+                    <div class="percentage">
+                        <h4>15%</h4>
+                        <p>$15.00</p>
+                    </div>
+                    <div class="percentage">
+                        <h4>20%</h4>
+                        <p>$20.00</p>
+                    </div>
+                    <div class="percentage">
+                        <h4>25%</h4>
+                        <p>$25.00</p>
+                    </div>
+                    <div class="percentage">
+                        <h4 class="other" id="openPopup">
+                            OTHER
+                        </h4>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="show-amount">
             <h1>TIP $20.00</h1>
-            <p>[if tip ammount is $0 button lebel shoud be "No TIP"]</p>
+            <!-- <p>[if tip ammount is $0 button lebel shoud be "No TIP"]</p> -->
         </div>
 
         <footer>
@@ -69,10 +71,8 @@
 
 
         <div id="popupOverlay">
-            <!-- <div class="popup-content"> -->
-                <i class="fa-solid fa-xmark cancel-icon" id="closePopupBtn"></i>
-                <iframe src="./ui_day_2/calculator.html" class="calc-frame" title="Calculator"></iframe>
-            <!-- </div> -->
+            <i class="fa-solid fa-xmark cancel-icon" id="closePopupBtn"></i>
+            <iframe src="./ui_day_2/calculator.html" class="calc-frame" title="Calculator"></iframe>
         </div>
 
         <script>
