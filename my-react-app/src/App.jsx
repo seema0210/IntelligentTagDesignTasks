@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       {/* <AmountTip/> */}
-      <Comps/>
+      <Comps/> 
+      {/* this comment for only testing purpose */}
     </>
   )
 }
