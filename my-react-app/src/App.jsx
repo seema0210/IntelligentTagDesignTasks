@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-      {/* <AmountTip/> */}
-      <Comps/>
+      <AmountTip/>
+      {/* <Comps/> */}
     </>
   )
 }
