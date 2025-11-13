@@ -5,38 +5,39 @@
 }
 
 body {
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+     background-color: #f6f1f1;
 }
 
 .home {
-    background-color: #f6f1f1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: relative;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 nav .fa-angle-left {
     color: rgb(6, 208, 6);
-    padding: 3vw;
-    font-size: 5vw;
+    padding: 4vw;
+    font-size: 6vw;
 }
 
 .home-body {
-    padding: 0 10vw;
+    padding: 0 9vw;
 }
 
 .home-nav {
     margin: 2vh;
     line-height: 1.4;
-    width: 65vw;
-    margin-left:  6.2vw;
+    width: 75vw;
 }
 
 .home-nav p {
-    font-size: 2.6vw;
+    font-size: 3vw;
     opacity: 0.7;
 }
 
@@ -47,21 +48,31 @@ nav .fa-angle-left {
 
 .home-nav .navbar h1 {
     font-weight: 500;
-    font-size: 5.5vw;
+    font-size: 6vw;
+}
+.home-nav .navbar input {
+    background: transparent;
+    border: none;
+    width: 25vw;
+    text-align: end;
+    font-size: 5vw;
+}
+.home-nav .navbar input:focus{
+    outline: none;
 }
 
 .home-amount{
-    margin: 6vh 0 2vh;
+    margin: 7vh 0 2vh;
 }
 
 .home-body h1 {
-    font-size: 5.6vw;
+    font-size: 6.3vw;
     text-align: center;
 }
 
 .text-amount {
     border: 0.4vh solid rgb(255, 193, 7);
-    margin: 3vh 8.5vw;
+    margin: 3vh 7vw;
     border-radius: 0.5rem;
     padding: 1.7vh 3vw;
 }
@@ -81,7 +92,7 @@ nav .fa-angle-left {
 .percentage {
     background-color: rgb(255, 193, 7);
     border-radius: 50%;
-    width: 13.5vw;
+    width: 15vw;
     aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
@@ -91,21 +102,21 @@ nav .fa-angle-left {
 }
 
 .percentage h4 {
-    font-size: 4vw;
+    font-size: 4.3vw;
     font-weight: 700;
 }
 
 .percentage .other{
-    font-size: 3.2vw;
+    font-size: 4vw;
     font-weight: 700;
 }
 
 .percentage p {
-    font-size: 2.8vw;
+    font-size: 3.2vw;
 }
 
 .show-amount {
-    margin:  7vh 7vw;
+    margin:  6vh 8vw;
 }
 
 .show-amount h1 {
@@ -115,7 +126,7 @@ nav .fa-angle-left {
     font-weight: 500;
     text-align: center;
     border: 0.4vh solid rgb(6, 208, 6);
-    font-size: 8vw;
+    font-size: 7vw;
 }
 
 
@@ -127,7 +138,10 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-}
+    overflow: hidden;
+    /* background-color: #f6f1f1; */
+    /* max-width: 100%; */
+ }
 
 .recet, .comps-apply {
     display: flex;
@@ -156,22 +170,22 @@ footer {
 
 
 #popupOverlay {
-   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;     
+  z-index: 1000;   
+  overflow: hidden;  
 }
 .calc-frame {
-  width: 60vw;
+  width: 80vw;
   height: 80vh;
   border: none;
-  border-radius: 10px;
 
 }
 

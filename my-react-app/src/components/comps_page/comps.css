@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: #f6f1f1;
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+nav .fa-angle-left {
+    color: rgb(6, 208, 6);
+    padding: 3vw;
+    font-size: 6vw;
+}
+
+.home h1{
+    text-align: center;
+    font-size: 5vw;
+}
+
+.home .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.7vh;
+}
+
+.home .navbar h1 {
+    font-weight: 600;
+    font-size: 5vw;
+}
+.home .navbar input {
+    background: transparent;
+    border: none;
+    width: 28vw;
+    text-align: end;
+    font-size: 5vw;
+    font-weight: 600;
+}
+
+.comps-body{
+    background-color: #d3d5d6;
+    border-radius: 1.5vw;
+    margin: 1vh 3vw;
+    padding: 3vw;
+}
+
+.comps-body .your-comps{
+    font-size: 4.5vw;
+    opacity: 0.8;
+}
+.comps-body .adjust{
+    justify-self: end;
+    background-color: black;
+    color: rgb(255, 193, 7);
+    width: 37vw;
+    font-size: 3vw;
+    text-align: center;
+    margin-top: -2.5vw;
+    padding-top: 0.8vh;
+    border-radius: 1.8vw 1.8vw 0 0;
+}
+
+.comps-easy-dine{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 1vw;
+    padding: 2vw;
+    background: #f6f1f1;
+}
+
+.comps-easy-dine .comps-easy h2{
+    font-size: 4.7vw;
+    opacity: 0.8;
+}
+.comps-easy-dine .comps-easy p{
+font-size: 3vw;
+    opacity: 0.8;
+}
+ .comps-easy-dine input{
+    background-color: #f6f1f1;
+    font-size: 5vw;
+    width: 30vw;
+    text-align: end;
+    font-weight: 600;
+    border: 3px solid rgb(255, 193, 7);
+    border-radius: 1vw;
+    padding: 0 2vw;
+ }
+
+.e-comp{
+    display: grid;
+    grid-template-columns: 3.5fr 1.5fr;;
+    gap: 2vw;
+    margin: 1.8vh 0;
+    
+    
+}
+
+.e-comp-first{
+border: 2px solid black;
+    border-radius: 1vw;
+    padding: 2vw;
+    background: #f6f1f1;
+}
+
+.e-comp-first .e-comp-val{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.e-comp-first .e-comp-val h2{
+    font-size: 4.7vw;
+    opacity: 0.8;
+}
+.e-comp-first .e-comp-val p{
+font-size: 4.7vw;
+    opacity: 0.8;
+    font-weight: 600;
+}
+.e-comp-first .e-comp-title{
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+.e-comp-first .e-comp-title .date{
+    font-size: 2.8vw;
+    opacity: 0.8;
+}
+.e-comp-first .e-comp-title .btn{
+    background-color: black;
+    color: rgb(255, 193, 7);
+    font-size: 2.6vw;
+    padding: 0.8vh 1vw 0;
+    width: 22vw;
+    margin: 0.5vh -2vw -2vw 0;
+    border-radius: 1vw;
+    text-align: center;
+    
+}
+
+.e-comp-second{
+background: #f6f1f1;
+    border-radius: 1.5vw;
+    padding: 1.5vh 0 1.5vh 2vw;
+}
+
+.e-comp-second h2{
+    opacity: 0.8;
+    font-size: 4.7vw;
+
+}
+.e-comp-second p{
+     font-size: 2.7vw;
+     opacity: 0.8;
+ }
+
+.club-dollars{
+    display: flex;
+    justify-content: space-between;
+    background: #f6f1f1;
+    border-radius: 1vw;
+    padding: 2vw;
+}
+
+.club-dollars .dollars h2{
+    font-size: 4.7vw;
+    opacity: 0.8;
+}
+.club-dollars .dollars p{
+    font-size: 2.9vw;
+    opacity: 0.8;
+}
+
+.club-dollars input{
+    background: #f6f1f1;
+    border: 3px solid rgb(255, 193, 7);
+    border-radius: 1vw;
+    font-size: 4.7vw;
+    width: 35vw;
+    text-align: end;
+    font-weight: 600;
+    padding: 0 1vw;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 0 0;
+}
+
+.buttons .btn1{
+    font-size: 4vw;
+    color: rgb(255, 193, 7);
+    padding: 1vh 3vw;
+    background-color: black;
+}
+.buttons .btn2{
+     font-size: 4vw;
+    background-color: rgb(255, 193, 7);
+    padding: 1vh 3vw;
+    border: none;
+   
+}
+.buttons .fa-redo{
+ padding: 0 2vw;
+ font-size: 3.3vw;
+}
+
+.buttons .fa-lightbulb{
+    /* padding: 0 1vw; */
+}
+
+.charged-t0-comps{
+    display: flex;
+    justify-content: space-between;
+    width: 55vw;
+    font-size: 4vw;
+    margin-left: 39vw;
+    margin-top: 4vw;
+}
+.after-comps{
+    display: flex;
+    justify-content: space-between;
+    width: 61vw;
+    font-size: 4vw;
+    margin-left: 31.5vw;
+    margin-top: 1vw;
+}
+
+.total-comps .title{
+    font-weight: 600;
+}
+
+.show-amount h1 {
+    background-color: rgb(255, 193, 7);
+    border-radius: 0.5rem;
+    padding: 2vh;
+    font-weight: 500;
+    text-align: center;
+    border: 0.4vh solid rgb(6, 208, 6);
+    font-size: 7vw;
+    margin-top: -3vh;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+ }
+
+.recet, .comps-apply {
+    display: flex;
+    align-items: center;
+}
+
+.recet p{
+    font-size: 2vw;
+    background-color: rgb(255, 193, 7);
+    margin: 0 1vw;
+    padding: 0.8vh 1.5vw;
+    opacity: 0.8;
+}
+.comps-apply p{
+   font-size: 2.8vw;
+    margin: 0 1vw; 
+    opacity: 0.7;
+}
+
+/* .fa-calculator,
+.fa-file-invoice {
+    background-color: rgb(255, 193, 7);
+    padding: 2.7vw;
+    font-size: 7vw;
+} */
+
+
+
+  
