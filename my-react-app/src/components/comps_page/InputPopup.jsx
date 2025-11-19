@@ -1,34 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import './inputpopup.css'
 
-const InputPopup = ({setInputValPopup, popupTitle, setInputValue, inputValue}) => {
+const InputPopup = ({ setInputValPopup, popupTitle, setInputValue, inputValue, eCompTotal }) => {
 
   const [EnteredVal, setEnteredVal] = useState("")
 
-   useEffect(() => {
+  console.log('seems', eCompTotal);
+
+
+  useEffect(() => {
     if (inputValue) {
       setEnteredVal(inputValue.toString())
     }
   }, [inputValue])
-  console.log('inputValue', inputValue);
-  console.log('EnteredVal', EnteredVal);
-  
+  // console.log('inputValue', inputValue);
+  // console.log('EnteredVal', EnteredVal);
+
 
   const handleEnteredTipAmount = (e) => {
-        let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
+    let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
 
-        if(value === '.' && EnteredVal.includes('.')){
-            return   // eg EnteredVal : 44.89 then this block will execute
-        }
-        setEnteredVal((preVal) => preVal + value)  // concat the current and pre val
+    if (value === '.' && EnteredVal.includes('.')) {
+      return   // eg EnteredVal : 44.89 then this block will execute
+    } else if (EnteredVal.includes('.')) {
+      const decimals = EnteredVal.split(".")[1]; // split the digits by "." and catch last value
+
+      if (decimals.length >= 2) {
+        return; //  extra digits means mpre that 2
+      }
     }
-   const handleCancelValue = () => {
-        setEnteredVal((preVal) => preVal.slice(0, -1)) // here we are removing the last element from the value
-    }
+    setEnteredVal((preVal) => preVal + value)  // concat the current and pre val
+  }
+
+  const handleCancelValue = () => {
+    setEnteredVal((preVal) => preVal.slice(0, -1)) // here we are removing the last element from the value
+  }
   const handleFinalTipAmt = () => {
-        setInputValue(EnteredVal)
-        setInputValPopup(false)
+    console.log('seema', EnteredVal);
+
+    setInputValue(EnteredVal)
+    if(EnteredVal < eCompTotal) { // applied amount should less than given total
+      setInputValPopup(false)
     }
+  }
 
   return (
     <div>
@@ -39,11 +53,12 @@ const InputPopup = ({setInputValPopup, popupTitle, setInputValue, inputValue}) =
             <header>
               <div className='titles'>
                 <p className='enter-amt'>Enter the amount of {popupTitle} to use</p>
-                <p className='balance'>Available Balance: {inputValue}</p>
+                <p className='balance'>Available Balance: {`$${Number(EnteredVal).toFixed(2)}`}</p>
+                {/* always show 2 digit value */}
                 {
-                  <p className='exceeds-balance'>Exceeds available {popupTitle} balance</p>
+                  EnteredVal > eCompTotal ? <p className='exceeds-balance'>Exceeds available {popupTitle} balance</p> : null
                 }
-                
+
               </div>
               <input type="text"
                 value={EnteredVal.length > 0 ? `$${EnteredVal}` : "_"}

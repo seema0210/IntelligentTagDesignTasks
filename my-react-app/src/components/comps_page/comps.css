@@ -66,10 +66,10 @@ nav .fa-angle-left {
     justify-self: end;
     background-color: black;
     color: rgb(255, 193, 7);
-    width: 37vw;
+    width: 35vw;
     font-size: 3vw;
     text-align: center;
-    margin-top: -2.5vw;
+    margin-top: -1.5vw;
     padding-top: 0.8vh;
     border-radius: 1.8vw 1.8vw 0 0;
 }
@@ -130,7 +130,7 @@ font-size: 3vw;
     padding: 2vw;
     background: #f6f1f1;
 
-     width: 70%; 
+     width: 67%; 
     scroll-snap-align: start;
     box-sizing: border-box;
 
@@ -164,12 +164,23 @@ font-size: 4.7vw;
     background-color: black;
     color: rgb(255, 193, 7);
     font-size: 2.6vw;
-    padding: 0.8vh 1vw 0;
+    padding: 0.5vh;
     width: 22vw;
     margin: 0.5vh -2vw -2vw 0;
     border-radius: 1vw;
     text-align: center;
     
+}
+.e-comp-first .e-comp-title .btn-apply{
+    color: black;
+    background-color: rgb(255, 193, 7);
+    font-size: 2.6vw;
+    padding: 0.5vh;
+    width: 22vw;
+    margin: 0.5vh -2vw -2vw 0;
+    border-radius: 1vw;
+    text-align: center;
+    border: none;
 }
 
 .e-comp-second{
@@ -227,6 +238,13 @@ background: #f6f1f1;
     color: rgb(255, 193, 7);
     padding: 1vh 3vw;
     background-color: black;
+}
+.buttons .btn-new1{
+    font-size: 4vw;
+    background-color: rgb(255, 193, 7);
+    padding: 1vh 3vw;
+    color: black;
+    border: none;
 }
 .buttons .btn2{
      font-size: 4vw;
