@@ -1,8 +1,22 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import './comps.css'
+import InputPopup from './InputPopup'
 
 const Comps = () => {
+
+    const [inputValue, setInputValue] = useState(9.50)
+    const [inputValPopup, setInputValPopup] = useState(false)
+    const [popupTitle, setPopupTitle] = useState('')
+
+    const handleEasyDine = () => {
+        setInputValPopup(true)
+        setPopupTitle("EasyDine")
+    }
+    const handleClubDollars = () => {
+        setInputValPopup(true)
+        setPopupTitle("Club Dollars")
+    }
 
     return (
         <div className="home">
@@ -28,6 +42,7 @@ const Comps = () => {
                     </div>
                     <input type="text"
                         value="$9.50"
+                        onClick={handleEasyDine}
                     />
                 </div>
 
@@ -42,11 +57,42 @@ const Comps = () => {
                             <p className='btn'>Applied</p>
                         </div>
                     </div>
-
-                    <div className='e-comp-second'>
-                        <h2>eComp</h2>
-                        <p>Expiration Date :  02</p>
+                    <div className='e-comp-first'>
+                        <div className='e-comp-val'>
+                            <h2>eComp</h2>
+                            <p>$25.00</p>
+                        </div>
+                        <div className='e-comp-title'>
+                            <p className='date'>Expiration Date: 02/20/24</p>
+                            <p className='btn'>Applied</p>
+                        </div>
                     </div>
+                    <div className='e-comp-first'>
+                        <div className='e-comp-val'>
+                            <h2>eComp</h2>
+                            <p>$10.00</p>
+                        </div>
+                        <div className='e-comp-title'>
+                            <p className='date'>Expiration Date: 02/20/24</p>
+                            <p className='btn'>Applied</p>
+                        </div>
+                    </div>
+                    <div className='e-comp-first'>
+                        <div className='e-comp-val'>
+                            <h2>eComp</h2>
+                            <p>$5.00</p>
+                        </div>
+                        <div className='e-comp-title'>
+                            <p className='date'>Expiration Date: 02/20/24</p>
+                            <p className='btn'>Applied</p>
+                        </div>
+                    </div>
+
+                    {/* <div className='e-comp-second'>
+                        <h2>eComp</h2>
+                        <p>Expiration Date :  02/20/24</p>
+                    </div> */}
+
                 </div>
 
 
@@ -57,14 +103,13 @@ const Comps = () => {
                     </div>
                     <input type="text"
                         value="$0.00"
+                        onClick={handleClubDollars}
                     />
                 </div>
 
                 <div className='buttons'>
-                    {/* <div> */}
                     <button className='btn1'><i class="fas fa-lightbulb"></i> Smart Allocate</button>
                     <button className='btn2'> <i className="fas fa-redo"></i>Reset</button>
-                    {/* </div> */}
                 </div>
 
             </div>
@@ -95,6 +140,25 @@ const Comps = () => {
                     <i className="fa-solid fa-file-invoice"></i>
                 </div>
             </footer>
+
+
+            {
+                inputValPopup &&
+                <div id="popupOverlay">
+                    <i className="fa-solid fa-xmark cancel-icon"
+                        id="closePopupBtn"
+                        onClick={() => setInputValPopup(false)}>
+                    </i>
+                    <div className="calc-frame">
+                        <InputPopup
+                        setInputValPopup={setInputValPopup}
+                        popupTitle={popupTitle}
+                        setInputValue={setInputValue}
+                        inputValue={inputValue}
+                        />
+                    </div>
+                </div>
+            }
 
         </div>
     )
