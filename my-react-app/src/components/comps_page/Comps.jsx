@@ -5,10 +5,12 @@ import InputPopup from './InputPopup'
 
 const Comps = () => {
 
+    const easyDineAvailableBalance = 24
+    const clubDollarAvailableBalance = 65
     const [eCompTotal, setECompTotal] = useState(59.5)
-    const [easyDineVal, setEasyDineVal] = useState(9.50)
+    const [easyDineVal, setEasyDineVal] = useState(0)
     const [clubDollarVal, setCLubDillarVal] = useState(0.00)
-    const [eComVal, setEcomVal] = useState(0)
+    const [eComVal, setEcomVal] = useState([])
     const [smartAllocate, setSmartAllocate] = useState(false)
 
     const [inputValPopup, setInputValPopup] = useState(false)
@@ -22,15 +24,17 @@ const Comps = () => {
         setInputValPopup(true)
         setPopupTitle("Club Dollars")
     }
+    
     const handleEComps = (item) => {
-        if(eComVal == item){ // toggle functionality (if got repest value then it will reset the val)
-            setEcomVal(0)
+        if(eComVal.includes(item)){ // toggle functionality (if got repeat value)
+            setEcomVal(eComVal.filter((currentItem) => currentItem != item)) // filter dublicate ecoms
         }else{
-            setEcomVal(item)
+            setEcomVal([...eComVal, item]) // can select multiple ecoms
         }
     }
 
-    var addChargedToComps = (+eComVal) + (+clubDollarVal) + (+easyDineVal) // all entered values are added
+    const addEcom = eComVal?.reduce((sum, val) => sum+val, 0) // here 0 is default value of sum
+    var addChargedToComps = (+addEcom) + (+clubDollarVal) + (+easyDineVal) // all entered values are added
     var chargedToComps = `$${addChargedToComps.toFixed(2)}` // fixed those values with 2 digits with $
 
     var remainingAfterComps = eCompTotal - addChargedToComps
@@ -39,25 +43,23 @@ const Comps = () => {
     var remainingAfterCompsValFinal = (remainingAfterComps > 0 && smartAllocate) ? `$${Number(0).toFixed(2)}` :
      remainingAfterComps > 0 ? remainingAfterCompsVal : `$${Number(0).toFixed(2)}`
 
+     var smartAllocateDefault = eCompTotal - 50
+
 
     const handleSmartAllocate = () => {
-        if (remainingAfterComps > 0) {
-            setSmartAllocate((preVal) => !preVal)
-        }
+        setEcomVal([50])
+        setEasyDineVal(smartAllocateDefault)
+        setSmartAllocate(true)
+
     }
+    
     const handleReset = () => {
         setEasyDineVal(0)
         setCLubDillarVal(0)
-        setEcomVal(0)
+        setEcomVal([])
         setSmartAllocate(false)
     }
-    // console.log('eCompTotal', eCompTotal);
-    // console.log('addChargedToComps', addChargedToComps);
-    console.log('remainingAfterComps', remainingAfterComps);
-    // console.log('eComVal', eComVal);
-    // console.log('selectedComp', selectedComp);
-
-
+    
     return (
         <div className="home">
             <nav>
@@ -69,20 +71,20 @@ const Comps = () => {
                 <h1>Comp-Eligible Total :</h1>
                 <input type="text"
                     value={`$${Number(eCompTotal).toFixed(2)}`}
+                    onChange={()=>{}}
                 />
             </div>
 
             <div className='comps-body'>
                 <h2 className='your-comps'>Apply Your Comps:</h2>
                 {
-                    (smartAllocate == true && remainingAfterComps > 0) ? <p className='adjust'>Adjusted</p>
+                    (smartAllocate == true && easyDineVal > 0) ? <p className='adjust'>Adjusted</p>
                         : (easyDineVal > 0 && remainingAfterComps > 0) ? <p className='adjust'> Applied</p> : <p style={{ height: "1vh" }}></p>
                 }
                 <div className='comps-easy-dine'>
                     <div className='comps-easy'>
                         <h2>EasyDine</h2>
-                        {/* <p style={{ color: 'red' }}>Available Balance: {`$${Number(easyDineVal).toFixed(2)}`}</p> */}
-                        <p style={{ color: remainingAfterComps < 0 ? 'red' : 'black' }}>Available Balance: {`$${Number(easyDineVal).toFixed(2)}`}</p>
+                        <p style={{ color: remainingAfterComps < 0 ? 'red' : 'black' }}>Available Balance: {`$${Number(easyDineAvailableBalance).toFixed(2)}`}</p>
                         {/* <p>Available Balance: {`$${Number(easyDineVal).toFixed(2)}`}</p> */}
                     </div>
                     <input type="text"
@@ -94,16 +96,16 @@ const Comps = () => {
                 <div className='e-comp'>
                     {
                         [50, 25, 10, 5]?.map((item) => (
-                            <div className='e-comp-first'>
+                            <div className='e-comp-first' key={item}>
                                 <div className='e-comp-val'>
                                     <h2>eComp</h2>
                                     <p>${item}</p>
                                 </div>
                                 <div className='e-comp-title'>
                                     <p className='date'>Expiration Date: 02/20/24</p>
-                                    <button className={eComVal == item ? 'btn' : 'btn-apply' }
+                                    <button className={eComVal.includes(item) ? 'btn' : 'btn-apply' }
                                         onClick={()=>handleEComps(item)}
-                                    >{ eComVal == item ? "Applied" : "Tap to apply"}</button>
+                                    >{ eComVal.includes(item) ? "Applied" : "Tap to apply"}</button>
                                 </div>
                             </div>
                         ))
@@ -120,7 +122,7 @@ const Comps = () => {
                     <div className='dollars'>
                         <h2>Club Dollars</h2>
                         {/* <p>Available Balance: {`$${Number(clubDollarVal).toFixed(2)}`}</p> */}
-                        <p style={{ color: remainingAfterComps < 0 ? 'red' : 'black' }}>Available Balance: {`$${Number(clubDollarVal).toFixed(2)}`}</p>
+                        <p style={{ color: remainingAfterComps < 0 ? 'red' : 'black' }}>Available Balance: {`$${Number(clubDollarAvailableBalance).toFixed(2)}`}</p>
                     </div>
                     <input type="text"
                         value={`$${Number(clubDollarVal).toFixed(2)}`}
@@ -130,7 +132,7 @@ const Comps = () => {
 
                 <div className='buttons'>
                     <button className={smartAllocate ? "btn1" :'btn-new1'} onClick={handleSmartAllocate}>
-                        <i class="fas fa-lightbulb"></i> Smart Allocate</button>
+                        <i className="fas fa-lightbulb"></i> Smart Allocate</button>
                     <button className='btn2' onClick={handleReset}>
                         <i className="fas fa-redo" ></i>Reset</button>
                 </div>
@@ -180,6 +182,7 @@ const Comps = () => {
                             setInputValue={popupTitle === "EasyDine" ? setEasyDineVal : setCLubDillarVal}
                             inputValue={popupTitle === "EasyDine" ? easyDineVal : clubDollarVal}
                             eCompTotal={eCompTotal}
+                            availableBalance={popupTitle === "EasyDine" ? easyDineAvailableBalance : clubDollarAvailableBalance}
                         />
                     </div>
                 </div>
