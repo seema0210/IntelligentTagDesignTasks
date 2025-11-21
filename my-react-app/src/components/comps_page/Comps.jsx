@@ -88,8 +88,8 @@ const Comps = () => {
                         {/* <p>Available Balance: {`$${Number(easyDineVal).toFixed(2)}`}</p> */}
                     </div>
                     <input type="text"
-                        value={`$${Number(easyDineVal).toFixed(2)}`}  // it will show 2 decimal place.
                         onClick={handleEasyDine}
+                        readOnly={`$${Number(easyDineVal).toFixed(2)}`} // it will show 2 decimal place.
                     />
                 </div>
 
@@ -125,8 +125,8 @@ const Comps = () => {
                         <p style={{ color: remainingAfterComps < 0 ? 'red' : 'black' }}>Available Balance: {`$${Number(clubDollarAvailableBalance).toFixed(2)}`}</p>
                     </div>
                     <input type="text"
-                        value={`$${Number(clubDollarVal).toFixed(2)}`}
                         onClick={handleClubDollars}
+                        readOnly={`$${Number(clubDollarVal).toFixed(2)}`}
                     />
                 </div>
 
