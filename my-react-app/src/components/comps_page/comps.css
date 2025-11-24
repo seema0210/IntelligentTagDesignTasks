@@ -292,6 +292,7 @@ background: #f6f1f1;
     border: 0.4vh solid rgb(6, 208, 6);
     font-size: 7vw;
     margin-top: -3vh;
+    cursor: pointer;
 }
 
 footer {
@@ -323,13 +324,6 @@ footer {
     opacity: 0.7;
 }
 
-/* .fa-calculator,
-.fa-file-invoice {
-    background-color: rgb(255, 193, 7);
-    padding: 2.7vw;
-    font-size: 7vw;
-} */
-
 #popupOverlay {
   position: fixed;
   top: 0;
@@ -348,8 +342,35 @@ footer {
   height: 80vh;
   border: none;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
+/* continue proceed css */
+
+.continue-btns{
+    width: 65vw;
+    display: flex;
+}
+.continue-btns button{
+    margin: 4vh 1.7vw;
+    font-size: 4.5vw;
+}
+
+.continue-note{
+    
+      justify-items: anchor-center;
+      width: 80vw;
+    font-size: 4.5vw;
+    line-height: 1.5;
+}
+
+.continue-note p{
+    padding: 1.6vh 3vw;
+    text-align: center;
+}
 
 
   

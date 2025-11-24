@@ -16,6 +16,8 @@ const Comps = () => {
     const [inputValPopup, setInputValPopup] = useState(false)
     const [popupTitle, setPopupTitle] = useState('')
 
+    const [isContinue, setIsContinue] = useState(false)
+
     const handleEasyDine = () => {
         setInputValPopup(true)
         setPopupTitle("EasyDine")
@@ -24,16 +26,16 @@ const Comps = () => {
         setInputValPopup(true)
         setPopupTitle("Club Dollars")
     }
-    
+
     const handleEComps = (item) => {
-        if(eComVal.includes(item)){ // toggle functionality (if got repeat value)
+        if (eComVal.includes(item)) { // toggle functionality (if got repeat value)
             setEcomVal(eComVal.filter((currentItem) => currentItem != item)) // filter dublicate ecoms
-        }else{
+        } else {
             setEcomVal([...eComVal, item]) // can select multiple ecoms
         }
     }
 
-    const addEcom = eComVal?.reduce((sum, val) => sum+val, 0) // here 0 is default value of sum
+    const addEcom = eComVal?.reduce((sum, val) => sum + val, 0) // here 0 is default value of sum
     var addChargedToComps = (+addEcom) + (+clubDollarVal) + (+easyDineVal) // all entered values are added
     var chargedToComps = `$${addChargedToComps.toFixed(2)}` // fixed those values with 2 digits with $
 
@@ -41,9 +43,9 @@ const Comps = () => {
     var remainingAfterCompsVal = `$${remainingAfterComps.toFixed(2)}`
 
     var remainingAfterCompsValFinal = (remainingAfterComps > 0 && smartAllocate) ? `$${Number(0).toFixed(2)}` :
-     remainingAfterComps > 0 ? remainingAfterCompsVal : `$${Number(0).toFixed(2)}`
+        remainingAfterComps > 0 ? remainingAfterCompsVal : `$${Number(0).toFixed(2)}`
 
-     var smartAllocateDefault = eCompTotal - 50
+    var smartAllocateDefault = eCompTotal - 50
 
 
     const handleSmartAllocate = () => {
@@ -52,14 +54,14 @@ const Comps = () => {
         setSmartAllocate(true)
 
     }
-    
+
     const handleReset = () => {
         setEasyDineVal(0)
         setCLubDillarVal(0)
         setEcomVal([])
         setSmartAllocate(false)
     }
-    
+
     return (
         <div className="home">
             <nav>
@@ -71,7 +73,7 @@ const Comps = () => {
                 <h1>Comp-Eligible Total :</h1>
                 <input type="text"
                     value={`$${Number(eCompTotal).toFixed(2)}`}
-                    onChange={()=>{}}
+                    onChange={() => { }}
                 />
             </div>
 
@@ -89,7 +91,7 @@ const Comps = () => {
                     </div>
                     <input type="text"
                         onClick={handleEasyDine}
-                        readOnly={`$${Number(easyDineVal).toFixed(2)}`} // it will show 2 decimal place.
+                        value={`$${Number(easyDineVal).toFixed(2)}`} // it will show 2 decimal place.
                     />
                 </div>
 
@@ -103,9 +105,9 @@ const Comps = () => {
                                 </div>
                                 <div className='e-comp-title'>
                                     <p className='date'>Expiration Date: 02/20/24</p>
-                                    <button className={eComVal.includes(item) ? 'btn' : 'btn-apply' }
-                                        onClick={()=>handleEComps(item)}
-                                    >{ eComVal.includes(item) ? "Applied" : "Tap to apply"}</button>
+                                    <button className={eComVal.includes(item) ? 'btn' : 'btn-apply'}
+                                        onClick={() => handleEComps(item)}
+                                    >{eComVal.includes(item) ? "Applied" : "Tap to apply"}</button>
                                 </div>
                             </div>
                         ))
@@ -126,12 +128,12 @@ const Comps = () => {
                     </div>
                     <input type="text"
                         onClick={handleClubDollars}
-                        readOnly={`$${Number(clubDollarVal).toFixed(2)}`}
+                        value={`$${Number(clubDollarVal).toFixed(2)}`}
                     />
                 </div>
 
                 <div className='buttons'>
-                    <button className={smartAllocate ? "btn1" :'btn-new1'} onClick={handleSmartAllocate}>
+                    <button className={smartAllocate ? "btn1" : 'btn-new1'} onClick={handleSmartAllocate}>
                         <i className="fas fa-lightbulb"></i> Smart Allocate</button>
                     <button className='btn2' onClick={handleReset}>
                         <i className="fas fa-redo" ></i>Reset</button>
@@ -142,8 +144,10 @@ const Comps = () => {
             <div className='total-comps'>
                 <div className='charged-t0-comps'>
                     <p className='title'>Charged to Comps:</p>
-                    <p style={{color : remainingAfterComps < 0 ? 'red' : 'black', 
-                    fontWeight: remainingAfterComps < 0 ? 'bold' : 500}} >{chargedToComps}</p>
+                    <p style={{
+                        color: remainingAfterComps < 0 ? 'red' : 'black',
+                        fontWeight: remainingAfterComps < 0 ? 'bold' : 500
+                    }} >{chargedToComps}</p>
                 </div>
                 <div className='after-comps'>
                     <p className='title'>Remaining After Comps:</p>
@@ -151,7 +155,9 @@ const Comps = () => {
                 </div>
             </div>
 
-            <div className="show-amount">
+            <div className="show-amount"
+                onClick={() => setIsContinue(true)}
+            >
                 <h1>CONTINUE</h1>
             </div>
 
@@ -188,7 +194,39 @@ const Comps = () => {
                 </div>
             }
 
-        </div>
+            {
+                isContinue &&
+                <div id="popupOverlay">
+
+                    <div className="calc-frame">
+
+                        <div className='continue-note'>
+                            <div className="popup-overlay">
+                                <p><strong>Please Note:</strong> eComps used will <br /> fully cover the eligible food <br /> total. 
+                                Any excess value is not <br />retained for the future use.<br /> Proceed  with this payment?</p>
+
+                            </div>
+
+                            <div className='continue-btns'>
+                                <button type="button"
+                                    className="colse-popup"
+                                    id="closePopupBtn"
+                                    onClick={() => setIsContinue(false)}>
+                                    Adjust</button>
+                                <button type="button"
+                                    className="colse-popup"
+                                    id="closePopupBtn"
+                                    onClick={() => { alert('next page will open') }}>
+                                    Proceed</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            }
+
+        </div >
     )
 }
 
