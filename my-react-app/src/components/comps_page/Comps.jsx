@@ -2,8 +2,9 @@
 import React, { useState } from 'react'
 import './comps.css'
 import InputPopup from './InputPopup'
+import TotalDue from './TotalDue'
 
-const Comps = () => {
+const Comps = ({setCurrentPage}) => {
 
     const easyDineAvailableBalance = 24
     const clubDollarAvailableBalance = 65
@@ -17,7 +18,7 @@ const Comps = () => {
     const [popupTitle, setPopupTitle] = useState('')
 
     const [isContinue, setIsContinue] = useState(false)
-
+   
     const handleEasyDine = () => {
         setInputValPopup(true)
         setPopupTitle("EasyDine")
@@ -202,7 +203,7 @@ const Comps = () => {
 
                         <div className='continue-note'>
                             <div className="popup-overlay">
-                                <p><strong>Please Note:</strong> eComps used will <br /> fully cover the eligible food <br /> total. 
+                                <p><strong>Please note:</strong> eComps used will <br /> fully cover the eligible food <br /> total. 
                                 Any excess value is not <br />retained for the future use.<br /> Proceed  with this payment?</p>
 
                             </div>
@@ -216,8 +217,9 @@ const Comps = () => {
                                 <button type="button"
                                     className="colse-popup"
                                     id="closePopupBtn"
-                                    onClick={() => { alert('next page will open') }}>
+                                    onClick={()=>setCurrentPage("TOTAL_DUE")}> 
                                     Proceed</button>
+                                    {/* here update the component name */}
                             </div>
                         </div>
 
@@ -225,6 +227,15 @@ const Comps = () => {
                     </div>
                 </div>
             }
+
+            {/* {
+                isProceed &&
+                <div>
+                <TotalDue
+                setIsProceed={setIsProceed}
+                />
+                </div>
+            } */}
 
         </div >
     )

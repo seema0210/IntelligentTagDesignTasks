@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { AmountTip } from './components/tip_page/AmountTip'
-import Comps from './components/comps_page/Comps'
+import CompsRoot from './components/comps_page/CompsRoot'
 
 function App() {
 
   return (
     <>
       {/* <AmountTip/> */}
-      <Comps/> 
-      {/* this comment for only testing purpose */}
+      <CompsRoot/> 
+      
     </>
   )
 }
