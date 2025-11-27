@@ -1,0 +1,80 @@
+html, body {
+    /* overflow: hidden; */
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.total-due{
+    padding: 3vh 11vw;
+    opacity: 0.8;
+    position: relative;
+    /* background-color: #ffffff; */
+}
+
+.due-value{
+    padding: 6vh 0vw;
+}
+
+.due-val{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    line-height: 1.5;
+}
+
+.due-val p{
+    text-align: end;
+    font-size:5.3vw;
+}
+
+.total-due hr {
+    width: 74%;        
+    border: none;      
+    border-top: 3px solid #000;  
+    margin: 10px 0;   
+    justify-self: end;
+}
+
+.due-val .final-total{
+    font-weight: bold;
+    font-size: 6.3vw;
+}
+
+.total-due .success{
+    justify-self: center;
+    margin: 15vh 0;
+}
+
+.total-due .success button{
+    width: 40vw;
+    background-color: rgb(255, 193, 7);
+    border: none;
+    font-size: 5.5vw;
+    padding: 1vh 0;
+}
+
+.text{
+    line-height: 1.3;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1vh 11vw;
+}
+
+.text p{
+    font-size: 3.7vw;
+    text-align: center;
+}
+
+.text .auto{
+    padding: 2vh 0;
+}
+
+.text button{
+    width: 16vw;
+    background-color: rgb(255, 193, 7);
+    border: none;
+    font-size: 2.8vw;
+    padding: 0.7vh 0;
+    margin: 1vh 2vw;
+}
