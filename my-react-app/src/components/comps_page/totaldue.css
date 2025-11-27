@@ -13,7 +13,7 @@ html, body {
 }
 
 .due-value{
-    padding: 6vh 0vw;
+    padding: 6vh 1vw;
 }
 
 .due-val{
@@ -24,11 +24,11 @@ html, body {
 
 .due-val p{
     text-align: end;
-    font-size:5.3vw;
+    font-size:5.7vw;
 }
 
 .total-due hr {
-    width: 74%;        
+    width: 77%;        
     border: none;      
     border-top: 3px solid #000;  
     margin: 10px 0;   
@@ -37,12 +37,12 @@ html, body {
 
 .due-val .final-total{
     font-weight: bold;
-    font-size: 6.3vw;
+    font-size: 6.7vw;
 }
 
 .total-due .success{
     justify-self: center;
-    margin: 15vh 0;
+    margin: 21vh 0;
 }
 
 .total-due .success button{

@@ -36,8 +36,8 @@ const TotalDue = () => {
 
             <div className='text'>
                 <p className='auto'>[auto advance once  valid CC is recognized]</p>
-                <p>[if tax cannot be accuratly displayed, i would Like to estimate tax due and show a disclaimer]</p>
-                <button>[RECET]</button>
+                <p>[if tax cannot be accurately displayed, i would Like to estimate tax due and show a disclaimer]</p>
+                <button>[RESET]</button>
             </div>
         </div>
     )
