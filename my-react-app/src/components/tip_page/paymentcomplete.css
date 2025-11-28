@@ -1,0 +1,51 @@
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+.payment-complete{
+    padding: 13vh 6vw;
+    text-align: center;
+    opacity: 0.8;
+}
+.payment-complete h1{
+    padding: 3vh 0;
+    font-size: 6vw;
+}
+
+.amount{
+    line-height: 1.3;
+}
+
+.amount h2{
+    font-size: 4.8vw;
+}
+.amount p{
+    font-size: 4.3vw;
+}
+
+.payment-complete .take-receipt{
+    font-size: 4.3vw;
+    padding: 3vh 0;
+}
+
+.receipt{
+    padding-top: 15vh;
+}
+
+.receipt .get-receipt{
+    font-size: 5vw;
+}
+
+.receipt .link{
+    font-size: 3.8vw;
+}
+
+.receipt button{
+    background-color: rgb(255, 193, 7);
+    border: none;
+    font-size: 6vw;
+    padding: 1vh 6vw;
+    margin: 2vh 0;
+}

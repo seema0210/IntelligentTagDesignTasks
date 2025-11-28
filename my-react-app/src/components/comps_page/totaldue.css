@@ -9,11 +9,11 @@ html, body {
     padding: 3vh 11vw;
     opacity: 0.8;
     position: relative;
-    /* background-color: #ffffff; */
 }
 
 .due-value{
-    padding: 6vh 1vw;
+    padding: 4.5vh 1vw;
+    display: inline-block;
 }
 
 .due-val{
@@ -42,7 +42,7 @@ html, body {
 
 .total-due .success{
     justify-self: center;
-    margin: 21vh 0;
+    margin: 1vh 0;
 }
 
 .total-due .success button{
@@ -77,4 +77,71 @@ html, body {
     font-size: 2.8vw;
     padding: 0.7vh 0;
     margin: 1vh 2vw;
+}
+
+.credit-card-3{
+    text-align: center;
+}
+.credit-card-3 .error{
+    color: red;
+    font-size: 5.2vw;
+    margin-top: 14vh;
+}
+
+.credit-card-3 .try-again{
+    font-size: 5vw;
+    margin-bottom: -18vh;
+    margin-top: 1vh;
+}
+
+/* progress bar css */
+.authorization-box {
+    width: 87%;
+    margin: 0 auto 4vh;
+    background: white;
+    border: 2px solid #999;
+}
+
+.auth-title {
+    background: #003cd1;
+    color: white;
+    padding: 1vh;
+    margin: 0 0 1vh;
+    font-size: 5vw;
+}
+
+.auth-sub {
+    font-size: 4vw;
+    margin-bottom: 2vh;
+    padding: 0 1vw;
+}
+
+.progress-wrapper {
+    width: 96%;
+    height: 4vh;
+    border: 1px solid #aaa;
+    background: #e6e6e6;
+    margin: 0 1vw;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #45c845;
+    animation: fillBar 4s forwards linear;
+}
+
+@keyframes fillBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.cancel-btn {
+    width: 50%;
+    display: block;
+    margin: 1.5vh auto;
+    background: #ccc;
+    border: 1px solid #000;
+    padding: 1vh 0;
+    font-size: 4vw;
 }

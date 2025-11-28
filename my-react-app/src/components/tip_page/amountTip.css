@@ -197,3 +197,28 @@ footer {
   color: white;
   cursor: pointer;
 }
+
+.confirm-tip-calc-frame{
+     width: 70vw;
+  height: 60vh;
+  border: none;
+}
+
+.confirm-tip-amount .popup-overlay{
+    padding: 4vh 7.5vw;
+    text-align: center;
+}
+.confirm-tip-calc-frame .confirm-tip-amount .popup-overlay h1{
+    margin-bottom: 1.5vh;
+    font-size: 5.5vw;
+}
+.confirm-tip-amount .popup-overlay p{
+    font-size: 4.5vw;
+    padding: 1vh 0;
+    line-height: 1.3;
+}
+
+.confirm-tip-calc-frame .continue-btns{
+    justify-self: center;
+    width: 45vw;
+}
