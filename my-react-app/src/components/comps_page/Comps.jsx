@@ -217,9 +217,11 @@ const Comps = ({setCurrentPage}) => {
                                 <button type="button"
                                     className="colse-popup"
                                     id="closePopupBtn"
-                                    onClick={()=>setCurrentPage("TOTAL_DUE")}> 
+                                    // onClick={()=>setCurrentPage("TOTAL_DUE")}> 
+                                    // onClick={()=>setCurrentPage("COMPS")}
+                                    onClick={() => setIsContinue(false)}
+                                    > 
                                     Proceed</button>
-                                    {/* here update the component name */}
                             </div>
                         </div>
 
@@ -227,15 +229,6 @@ const Comps = ({setCurrentPage}) => {
                     </div>
                 </div>
             }
-
-            {/* {
-                isProceed &&
-                <div>
-                <TotalDue
-                setIsProceed={setIsProceed}
-                />
-                </div>
-            } */}
 
         </div >
     )
