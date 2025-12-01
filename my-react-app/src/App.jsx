@@ -32,6 +32,7 @@ function App() {
           setTotalDue={setTotalDue}
           tax={tax}
           tryCreditCard={tryCreditCard}
+          setTryCreditCard={setTryCreditCard}
           totalDue={totalDue}
         />
       case "AMOUNT_TIP":
@@ -45,11 +46,8 @@ function App() {
       case "PAYMENT_COMPLETE":
         return <PaymentComplete
           setCurrentPage={setCurrentPage}
-          // changeAmount={changeAmount}
-          // setChangeAmount={setChangeAmount}
           tipAmount={tipAmount}
           totalDue={totalDue}
-          // settipAmount={settipAmount}
         />
     }
   }
