@@ -91,7 +91,7 @@ html, body {
 .credit-card-3 .try-again{
     font-size: 5vw;
     margin-bottom: -18vh;
-    margin-top: 9vh;
+    margin-top: 1vh;
 }
 .credit-card-3 .success-retry button{
     width: 40vw;
@@ -99,7 +99,7 @@ html, body {
     border: none;
     font-size: 5.5vw;
     padding: 1vh 0;
-    margin-top: 8vh;
+    margin-top: 20vh;
 }
 
 /* progress bar css */
