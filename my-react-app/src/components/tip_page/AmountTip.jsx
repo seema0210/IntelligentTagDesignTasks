@@ -101,7 +101,7 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
 
             <footer>
                 <div className="recet">
-                    <i className="fa-solid fa-calculator"></i>
+                    <i className="fa-solid fa-calculator" onClick={()=>setOpenCalculator(true)}></i>
                     <p onClick={resetTip}>[RESET]</p>
                 </div>
 
@@ -159,12 +159,6 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
                                     id="closePopupBtn"
                                     onClick={handleCinfirmTip}>
                                     Confirm Tip</button>
-                                {/* <button type="button"
-                                    className="colse-popup"
-                                    id="closePopupBtn"
-                                    onClick={() => setConfirmTipModal(false)}
-                                >
-                                    Cancel</button> */}
                             </div>
                         </div>
 

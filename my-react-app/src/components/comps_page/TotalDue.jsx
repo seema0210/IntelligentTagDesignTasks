@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./totaldue.css"
 
-const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, tryCreditCard, totalDue }) => {
+const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, tryCreditCard, setTryCreditCard, totalDue }) => {
 
 
     console.log('changeAmount in total', changeAmount);
@@ -13,6 +13,11 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
         const totalDue = changeAmount + tipAmount + tax
         setTotalDue(totalDue)
     }, [])
+
+    const handleRetry = () => {
+        // setCurrentPage("AMOUNT_TIP")
+        setTryCreditCard(null)
+    }
 
     return (
         <div className='total-due'>
@@ -58,36 +63,25 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                             }
 
                             <p className='try-again'>Tap to try again</p>
-                            <div className='success'>
-                                <button type='button' onClick={() => setCurrentPage("AMOUNT_TIP")}>Retry</button>
+                            <div className='success-retry'>
+                                <button type='button' onClick={handleRetry}>Retry</button>
                             </div>
                         </div>
                         <div className='text'>
                             <button type='button' onClick={() => setCurrentPage("AMOUNT_TIP")}>[RESET]</button>
                         </div>
                     </> :
+
                     <>
-                        <div className="authorization-box">
-                            <h2 className="auth-title">Credit Card Finalize.</h2>
-                            <p className="auth-sub">Authorizing credit card payment</p>
 
-                            <div className="progress-wrapper">
-                                <div className="progress-fill"></div>
-                            </div>
-
-                            <button className="cancel-btn" onClick={() => setCurrentPage("AMOUNT_TIP")}>
-                                Cancel
-                            </button>
-                        </div>
-
-                        <div className='success'>
+                        <div className="success" style={{marginTop:"10vh"}}>
                             <button type='button' onClick={() => setCurrentPage("PAYMENT_COMPLETE")}>[success]</button>
                         </div>
                         <div className='success'>
-                            <button type='button' onClick={() => setCurrentPage("PAYMENT_COMPLETE")}>[failure]</button>
+                            <button type='button' onClick={() => setTryCreditCard(1)}>[failure]</button>
                         </div>
                         <div className='success'>
-                            <button type='button' onClick={() => setCurrentPage("PAYMENT_COMPLETE")}>[3rd failure]</button>
+                            <button type='button' onClick={() => setTryCreditCard(3)}>[3rd failure]</button>
                         </div>
 
                         <div className='text'>
