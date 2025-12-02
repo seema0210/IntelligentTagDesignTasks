@@ -11,7 +11,7 @@ html, body {
 }
 .payment-complete h1{
     padding: 3vh 0;
-    font-size: 6vw;
+    font-size: 6.5vw;
 }
 
 .amount{
@@ -22,11 +22,11 @@ html, body {
     font-size: 4.8vw;
 }
 .amount p{
-    font-size: 4.3vw;
+    font-size: 4.6vw;
 }
 
 .payment-complete .take-receipt{
-    font-size: 4.3vw;
+    font-size: 4.6vw;
     padding: 3vh 0;
 }
 
