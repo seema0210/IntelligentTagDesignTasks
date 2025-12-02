@@ -4,9 +4,12 @@ import "./totaldue.css"
 const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, tryCreditCard, setTryCreditCard, totalDue }) => {
 
 
-    console.log('changeAmount in total', changeAmount);
-    console.log('tipAmount in total', tipAmount);
+    // console.log('changeAmount in total', changeAmount);
+    // console.log('tipAmount in total', tipAmount);
+    
+    const [retry, setRetry] = useState(false)
     console.log('tryCreditCard', tryCreditCard);
+    console.log('retry', retry);
 
     useEffect(() => {
         // const totalDue = changeAmount + (-changeAmount) + tipAmount + tax
@@ -15,8 +18,18 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
     }, [])
 
     const handleRetry = () => {
-        // setCurrentPage("AMOUNT_TIP")
-        setTryCreditCard(null)
+        setRetry(false)
+    }
+    
+    const handletryCreditCard = () => {
+        setRetry(true)
+        setTryCreditCard((pre) => pre + 1)
+    }
+
+    const handleAgainProcess = () => {
+        setCurrentPage("AMOUNT_TIP")
+        setTryCreditCard(0)
+        setRetry(false)
     }
 
     return (
@@ -48,7 +61,7 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
             </div>
 
             {
-                tryCreditCard > 0 ?
+                (tryCreditCard > 0 && retry) ?
                     <>
                         <div className='credit-card-3'>
                             {
@@ -64,7 +77,11 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
 
                             <p className='try-again'>Tap to try again</p>
                             <div className='success-retry'>
-                                <button type='button' onClick={handleRetry}>Retry</button>
+                                {
+                                    (tryCreditCard < 3) ? 
+                                    <button type='button' onClick={handleRetry}>Retry</button> :
+                                    <button type='button' onClick={handleAgainProcess}>Process Again</button>
+                                }
                             </div>
                         </div>
                         <div className='text'>
@@ -78,10 +95,7 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                             <button type='button' onClick={() => setCurrentPage("PAYMENT_COMPLETE")}>[success]</button>
                         </div>
                         <div className='success'>
-                            <button type='button' onClick={() => setTryCreditCard(1)}>[failure]</button>
-                        </div>
-                        <div className='success'>
-                            <button type='button' onClick={() => setTryCreditCard(3)}>[3rd failure]</button>
+                            <button type='button' onClick={ handletryCreditCard}>[failure]</button>
                         </div>
 
                         <div className='text'>

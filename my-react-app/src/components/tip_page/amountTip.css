@@ -46,7 +46,7 @@ nav .fa-angle-left {
     justify-content: space-between;
 }
 
-.home-nav .navbar h1 {
+.home .home-nav .navbar h1 {
     font-weight: 500;
     font-size: 6vw;
 }
@@ -65,20 +65,20 @@ nav .fa-angle-left {
     margin: 7vh 0 2vh;
 }
 
-.home-body h1 {
+.home .home-body h1 {
     font-size: 6.3vw;
     text-align: center;
 }
 
-.text-amount {
+.home .text-amount {
     border: 0.4vh solid rgb(255, 193, 7);
     margin: 3vh 7vw;
     border-radius: 0.5rem;
-    padding: 1.7vh 3vw;
+    padding: 1vh 3vw;
 }
 
-.text-amount h1 {
-    font-size: 7vw;
+.home .text-amount h1 {
+    font-size: 7.3vw;
     text-align: end;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './amountTip.css'
 import Calculator from './Calculator'
 
@@ -8,6 +8,10 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
     const [openCalculator, setOpenCalculator] = useState(false)
     const [confirmTipModal, setConfirmTipModal] = useState(false)
 
+    useEffect(() => {
+           let twentyPercent = changeAmount * 0.20
+        settipAmount(twentyPercent)
+    }, [])
 
     const handleChangeAmount = (e) => {
         let value = e.target.value.replace(/[^0-9.]/g, '')  // here accepting only numbers 
