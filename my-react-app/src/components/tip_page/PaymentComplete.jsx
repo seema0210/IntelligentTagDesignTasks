@@ -4,11 +4,6 @@ import "./paymentcomplete.css"
 const PaymentComplete = ({setCurrentPage,tipAmount, totalDue}) => {
 
 
-    // console.log('changeAmount in total', changeAmount);
-//   console.log('tipAmount in total', tipAmount);
-
-// const totalDue = changeAmount + (-changeAmount) + tipAmount
-
     return (
         <div className='payment-complete'>
            
@@ -23,7 +18,7 @@ const PaymentComplete = ({setCurrentPage,tipAmount, totalDue}) => {
                 <div className='receipt'>
                     <p className='get-receipt'>Get a digital receipt?</p>
                     <p className='link'>we'll text you a link to view your receipt online.</p>
-                    <button type='button'>Text Receipt Link</button>
+                    <button type='button' onClick={()=>setCurrentPage("PAYMENT_SWIPE_FLOW")}>Text Receipt Link</button>
                 </div>
 
             <div className='text'>

@@ -3,6 +3,7 @@ import { AmountTip } from './components/tip_page/AmountTip'
 import TotalDue from './components/comps_page/TotalDue'
 import Comps from './components/comps_page/Comps'
 import PaymentComplete from './components/tip_page/PaymentComplete'
+import PaymentSwipeFlow from './components/tip_page/PaymentSwipeFlow'
 
 function App() {
 
@@ -48,6 +49,12 @@ function App() {
           setCurrentPage={setCurrentPage}
           tipAmount={tipAmount}
           totalDue={totalDue}
+        />
+      case "PAYMENT_SWIPE_FLOW":
+        return <PaymentSwipeFlow
+          setCurrentPage={setCurrentPage}
+          // tipAmount={tipAmount}
+          // totalDue={totalDue}
         />
     }
   }

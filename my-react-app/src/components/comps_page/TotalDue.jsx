@@ -39,10 +39,6 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                     <p>Subtotal:</p>
                     <p>${changeAmount.toFixed(2)}</p>
                 </div>
-                {/* <div className='due-val'>
-                    <p>Payment Applied:</p>
-                    <p>-${changeAmount.toFixed(2)}</p>
-                </div> */}
                 <div className='due-val'>
                     <p>Tip:</p>
                     <p>${tipAmount.toFixed(2)}</p>

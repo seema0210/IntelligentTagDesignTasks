@@ -1,0 +1,57 @@
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+.payment-complete{
+    padding: 13vh 4vw;
+    text-align: center;
+    opacity: 0.8;
+}
+.payment-complete h1{
+    padding: 1vh 0;
+    font-size: 5.8vw;
+}
+
+.amount{
+    font-size: 4.7vw;
+}
+
+.payment-complete h2{
+    font-size: 5.8vw;
+    padding: 1vh 0;
+}
+
+.payment-complete .take-receipt{
+    font-size: 4.7vw;
+    padding: 3vh 0;
+}
+
+.take-account{
+    font-size: 4.9vw;
+    padding: 2.3vh 0;
+}
+
+.success button{
+  background-color: rgb(255, 193, 7);
+    border: none;
+    font-size: 5vw;
+    padding: 1vh 6vw;
+    margin: 0.8vh 0;
+    width: 52vw;
+}
+
+.check-card{
+    margin-top: 3vh;
+}
+
+.check-card h1{
+    font-size: 4.9vw;
+    font-style: italic;
+}
+
+.check-card p{
+    font-size: 3.5vw;
+}
+
