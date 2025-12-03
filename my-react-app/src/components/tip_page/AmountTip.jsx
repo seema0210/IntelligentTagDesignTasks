@@ -54,7 +54,7 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
     }
 
     return (
-        <div class="home">
+        <div className="home">
             <nav>
                 <i className="fa-solid fa-angle-left"></i>
             </nav>

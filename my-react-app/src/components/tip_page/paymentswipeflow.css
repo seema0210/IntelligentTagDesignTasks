@@ -4,12 +4,12 @@ html, body {
     width: 100%;
     background-color: #ffffff;
 }
-.payment-complete{
-    padding: 13vh 4vw;
+.payment-complete-swipe{
+    padding: 13vh 5vw;
     text-align: center;
     opacity: 0.8;
 }
-.payment-complete h1{
+.payment-complete-swipe h1{
     padding: 1vh 0;
     font-size: 5.8vw;
 }
@@ -18,12 +18,12 @@ html, body {
     font-size: 4.7vw;
 }
 
-.payment-complete h2{
-    font-size: 5.8vw;
+.payment-complete-swipe h2{
+    font-size: 5.7vw;
     padding: 1vh 0;
 }
 
-.payment-complete .take-receipt{
+.payment-complete-swipe .take-receipt{
     font-size: 4.7vw;
     padding: 3vh 0;
 }
@@ -43,7 +43,8 @@ html, body {
 }
 
 .check-card{
-    margin-top: 3vh;
+    margin-top: 3.3vh;
+    line-height: 0.8;
 }
 
 .check-card h1{
@@ -52,6 +53,11 @@ html, body {
 }
 
 .check-card p{
-    font-size: 3.5vw;
+    font-size: 3.8vw;
+}
+.swap-failed{
+    color: red;
+    font-size: 5.5vw;
+    margin-top: 1.6vh;
 }
 
