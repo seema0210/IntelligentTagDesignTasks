@@ -1,25 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AmountTip } from './components/tip_page/AmountTip'
 import TotalDue from './components/comps_page/TotalDue'
 import Comps from './components/comps_page/Comps'
 import PaymentComplete from './components/tip_page/PaymentComplete'
 import PaymentSwipeFlow from './components/tip_page/PaymentSwipeFlow'
+import SwipeClubCard from './components/tip_page/SwipeClubCard'
+import SuccessClubDollar from './components/tip_page/SuccessClubDollar'
 
 function App() {
 
   const [currentPage, setCurrentPage] = useState('AMOUNT_TIP')
   const [changeAmount, setChangeAmount] = useState(100)
   const [tipAmount, settipAmount] = useState(0.00)
+  const [isSwipeFailed, setIsSwipeFailed] = useState(null)
 
   const [totalDue, setTotalDue] = useState(0)
-  // const [tax, setTax] = useState(0)
+  const [tryCreditCard, setTryCreditCard] = useState(0)
 
-   const [tryCreditCard, setTryCreditCard] = useState(0)
+  
 
    const tax = changeAmount * (3.54 / 100)
-
-   console.log('tax', tax);
-   
+   const clubDollerVal = totalDue * (5/100);
 
   const PageView = () => {
     switch (currentPage) {
@@ -44,24 +45,30 @@ function App() {
           tipAmount={tipAmount}
           settipAmount={settipAmount}
         />
-      case "PAYMENT_COMPLETE":
+      case "PAYMENT_COMPLETE": 
         return <PaymentComplete
           setCurrentPage={setCurrentPage}
           tipAmount={tipAmount}
-          totalDue={totalDue}
+          clubDollerVal={clubDollerVal}
         />
       case "PAYMENT_SWIPE_FLOW":
         return <PaymentSwipeFlow
           setCurrentPage={setCurrentPage}
-          // tipAmount={tipAmount}
-          // totalDue={totalDue}
+          isSwipeFailed={isSwipeFailed}
+          clubDollerVal={clubDollerVal}
+        />
+      case "SWIPE_CLUB_CARD":
+        return <SwipeClubCard
+          setCurrentPage={setCurrentPage}
+          setIsSwipeFailed={setIsSwipeFailed}
+        />
+      case "SUCCESS_CLUB_DOLLAR":
+        return <SuccessClubDollar
+          setCurrentPage={setCurrentPage}
+          clubDollerVal={clubDollerVal}
         />
     }
   }
-
-  console.log('changeAmount', changeAmount);
-  console.log('tipAmount', tipAmount);
-  
 
   return (
     <>

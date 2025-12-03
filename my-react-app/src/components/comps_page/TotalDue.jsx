@@ -2,17 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./totaldue.css"
 
 const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, tryCreditCard, setTryCreditCard, totalDue }) => {
-
-
-    // console.log('changeAmount in total', changeAmount);
-    // console.log('tipAmount in total', tipAmount);
     
     const [retry, setRetry] = useState(false)
+    const [isSwipeCard, setSwipeCard] = useState(true)
     console.log('tryCreditCard', tryCreditCard);
     console.log('retry', retry);
 
     useEffect(() => {
-        // const totalDue = changeAmount + (-changeAmount) + tipAmount + tax
         const totalDue = changeAmount + tipAmount + tax
         setTotalDue(totalDue)
     }, [])
@@ -30,6 +26,13 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
         setCurrentPage("AMOUNT_TIP")
         setTryCreditCard(0)
         setRetry(false)
+    }
+    const handleSuccess = () => {
+        if(isSwipeCard){
+            setCurrentPage("PAYMENT_SWIPE_FLOW")
+        }else{
+            setCurrentPage("PAYMENT_COMPLETE")
+        }
     }
 
     return (
@@ -61,11 +64,11 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                     <>
                         <div className='credit-card-3'>
                             {
-                                tryCreditCard < 3 ?
-                                    <p className='error'>Unable to read credit card</p> :
+                                tryCreditCard < 4 ?
+                                    <p className='error'>Unable to read credit card.</p> :
                                     <>
-                                        <p className='error'>Payment not completed.</p>
-                                        <strong style={{ color: "red", fontSize: '5vw' }}>
+                                        <p className='error-1'>Payment not completed.</p>
+                                        <strong style={{ color: "red", fontSize: '5.5vw' }}>
                                             Please ask  your server <br /> for assistance.
                                         </strong>
                                     </>
@@ -74,7 +77,7 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                             <p className='try-again'>Tap to try again</p>
                             <div className='success-retry'>
                                 {
-                                    (tryCreditCard < 3) ? 
+                                    (tryCreditCard < 4) ? 
                                     <button type='button' onClick={handleRetry}>Retry</button> :
                                     <button type='button' onClick={handleAgainProcess}>Process Again</button>
                                 }
@@ -86,9 +89,8 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                     </> :
 
                     <>
-
-                        <div className="success" style={{marginTop:"10vh"}}>
-                            <button type='button' onClick={() => setCurrentPage("PAYMENT_COMPLETE")}>[success]</button>
+                        <div className="success" style={{marginTop:"17vh"}}>
+                            <button type='button' onClick={handleSuccess}>[success]</button>
                         </div>
                         <div className='success'>
                             <button type='button' onClick={ handletryCreditCard}>[failure]</button>

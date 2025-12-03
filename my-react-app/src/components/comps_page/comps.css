@@ -258,10 +258,6 @@ background: #f6f1f1;
  font-size: 3.3vw;
 }
 
-.buttons .fa-lightbulb{
-    /* padding: 0 1vw; */
-}
-
 .charged-t0-comps{
     display: flex;
     justify-content: space-between;

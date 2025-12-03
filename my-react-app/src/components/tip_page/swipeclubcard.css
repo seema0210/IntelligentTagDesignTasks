@@ -1,0 +1,85 @@
+html, body {
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.swipe-club-card .swipe-head{
+    font-size: 5.6vw;
+    opacity: 0.8;
+    margin: -11vh 0 6vh;
+ }
+
+.swipe-club-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.authorization-box {
+    width: 62vw;
+    margin: 0 auto 4vh;
+    background: white;
+    border: 3px solid #A3A7BD;
+}
+
+.auth-title {
+    background: #7A9AAD;
+    color: white;
+    padding: 1vh;
+    margin: 0 0 1vh;
+    font-size: 4.3vw;
+}
+
+.auth-sub {
+    font-size: 3.8vw;
+    margin-bottom: 2vh;
+    padding: 0 1vw;
+    opacity: 0.8;
+}
+
+.progress-wrapper {
+    width: 96%;
+    height: 4vh;
+    border: 1px solid #aaa;
+    background: #e6e6e6;
+    margin: 0 1vw;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: rgb(2, 201, 2);
+    animation: fillBar 4s forwards linear;
+}
+
+@keyframes fillBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.cancel-btn {
+    width: 40%;
+    display: block;
+    margin: 1.5vh auto;
+    background: #A3A7BD;
+    padding: 1vh 0;
+    font-size: 3.5vw;
+    color: white;
+    border: none;
+}
+
+.swipe-btn{
+    margin-top: 6vh;
+}
+
+.swipe-club-card .swipe-btn button{
+    background-color: rgb(255, 193, 7);
+    border: none;
+    font-size: 4.7vw;
+    padding: 1vh 2vw;
+    width: 60vw;
+    opacity: 0.8;
+}
