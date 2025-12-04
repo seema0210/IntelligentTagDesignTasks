@@ -79,7 +79,7 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
                                 {
                                     (tryCreditCard < 4) ? 
                                     <button type='button' onClick={handleRetry}>Retry</button> :
-                                    <button type='button' onClick={handleAgainProcess}>Process Again</button>
+                                    <button type='button' onClick={handleAgainProcess}>Exit</button>
                                 }
                             </div>
                         </div>

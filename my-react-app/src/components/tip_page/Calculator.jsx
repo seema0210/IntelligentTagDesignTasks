@@ -3,17 +3,35 @@ import './calculator.css'
 
 const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculator }) => {
 
-    let defaultTipAmt = Number(tipAmount.toString().replace(/[^0-9.]/g, '')) || 0;
-    let defaultTipAmtNew = defaultTipAmt.toString() // created string formate value so we can concat or delete element of value
-    const [EnteredTipAmt, setEnteredTipAmt] = useState(defaultTipAmtNew || 0)
+    const [EnteredTipAmt, setEnteredTipAmt] = useState(0)
+
+    console.log('EnteredTipAmt', EnteredTipAmt);
+    console.log('EnteredTipAmt', typeof EnteredTipAmt);
+
 
     const handleEnteredTipAmount = (e) => {
         let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
 
-        if(value === '.' && EnteredTipAmt.includes('.')){
+        console.log('value', value);
+        console.log('value', typeof value);
+
+        let current = String(EnteredTipAmt)
+
+        if (value === '.' && current.includes('.')) {
             return   // eg EnteredTipAmt : 44.89 then this block will execute
         }
-        setEnteredTipAmt((preVal) => preVal + value)  // concat the current and pre val
+
+        if (current === "0" && value !== ".") { // we cant type like 005
+            current = "";
+        }
+
+        let newVal = current + value;
+
+        if (!/^\d*\.?\d{0,2}$/.test(newVal)) {
+            return;
+        }
+
+        setEnteredTipAmt((newVal))
     }
 
     const handleCancelValue = () => {
@@ -21,11 +39,10 @@ const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculat
     }
 
     const handleFinalTipAmt = () => {
-        settipAmount(EnteredTipAmt)
+        let finalValue = Number(EnteredTipAmt || 0).toFixed(2);
+        settipAmount(finalValue)
         setOpenCalculator(false)
     }
-
-    console.log('EnteredTipAmt', EnteredTipAmt);
 
     return (
         <div>
@@ -35,32 +52,32 @@ const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculat
                         <h1> Enter the amount to tip
                         </h1>
                         <input type="text"
-                            value={ EnteredTipAmt.length > 0 ? `$${EnteredTipAmt}` : "_"}
+                            value={EnteredTipAmt}
                         />
                     </header>
                     <div className="val-btn">
                         {
                             [7, 8, 9, 4, 5, 6, 1, 2, 3, '.', 0]?.map((item) => (
-                                <div 
-                                key={item}
-                                className="values"
-                                onClick={handleEnteredTipAmount}
+                                <div
+                                    key={item}
+                                    className="values"
+                                    onClick={handleEnteredTipAmount}
                                 >
                                     {item}
                                 </div>
                             ))
                         }
-                        
+
                         <div className="cancel"
                             onClick={handleCancelValue}
                         >&#9003;</div>
                     </div>
                 </div>
             </div>
-            <button type="button" 
-            className="colse-popup" 
-            id="closePopupBtn"
-            onClick={handleFinalTipAmt}
+            <button type="button"
+                className="colse-popup"
+                id="closePopupBtn"
+                onClick={handleFinalTipAmt}
             >Done</button>
 
         </div>
