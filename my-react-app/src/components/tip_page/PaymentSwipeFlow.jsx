@@ -15,7 +15,7 @@ const PaymentSwipeFlow = ({ setCurrentPage, isSwipeFailed, totalDue, clubDollerV
             <p className='take-account'>Tap 'apply' to add it to an account.</p>
 
             <div className="success" >
-                <button type='button' onClick={() => setCurrentPage("SWIPE_CLUB_CARD")}>Apply</button>
+                <button type='button' onClick={() => setCurrentPage("SWIPE_CLUB_CARD")}>Retry</button>
             </div>
             <div className='success'>
                 <button type='button' onClick={() => setCurrentPage("AMOUNT_TIP")}>Skip</button>
