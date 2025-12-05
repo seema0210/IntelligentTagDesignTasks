@@ -39,7 +39,6 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
     }
 
     const handleTip = () => {
-        console.log('tipAmount at popup confirm', tipAmount);
         setConfirmTipModal(true)
 
     }

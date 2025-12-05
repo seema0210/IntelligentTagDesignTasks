@@ -17,6 +17,8 @@ function App() {
   const [totalDue, setTotalDue] = useState(0)
   const [tryCreditCard, setTryCreditCard] = useState(0)
 
+console.log('tipAmount', tipAmount);
+console.log('tipAmount',typeof tipAmount);
   
 
    const tax = changeAmount * (3.54 / 100)

@@ -1,19 +1,12 @@
 import React, { useState } from 'react'
 import './calculator.css'
 
-const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculator }) => {
+const Calculator = ({ settipAmount, setOpenCalculator }) => {
 
     const [EnteredTipAmt, setEnteredTipAmt] = useState(0)
 
-    console.log('EnteredTipAmt', EnteredTipAmt);
-    console.log('EnteredTipAmt', typeof EnteredTipAmt);
-
-
     const handleEnteredTipAmount = (e) => {
         let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
-
-        console.log('value', value);
-        console.log('value', typeof value);
 
         let current = String(EnteredTipAmt)
 
@@ -30,8 +23,7 @@ const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculat
         if (!/^\d*\.?\d{0,2}$/.test(newVal)) {
             return;
         }
-
-        setEnteredTipAmt((newVal))
+        setEnteredTipAmt(newVal)
     }
 
     const handleCancelValue = () => {
@@ -39,7 +31,7 @@ const Calculator = ({ tipAmount, settipAmount, amountWithDoller, setOpenCalculat
     }
 
     const handleFinalTipAmt = () => {
-        let finalValue = Number(EnteredTipAmt || 0).toFixed(2);
+        let finalValue = +EnteredTipAmt
         settipAmount(finalValue)
         setOpenCalculator(false)
     }
