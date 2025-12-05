@@ -5,8 +5,6 @@ const TotalDue = ({ setCurrentPage, changeAmount, tipAmount, tax, setTotalDue, t
     
     const [retry, setRetry] = useState(false)
     const [isSwipeCard, setSwipeCard] = useState(true)
-    console.log('tryCreditCard', tryCreditCard);
-    console.log('retry', retry);
 
     useEffect(() => {
         const totalDue = changeAmount + tipAmount + tax
