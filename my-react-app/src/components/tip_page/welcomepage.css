@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.welcome h1{
+    text-align: center;
+    margin-top:12vh;
+    font-size: 8.5vw;
+    opacity: 0.8;
+}

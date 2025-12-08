@@ -12,20 +12,27 @@
     height: 90%; 
     display: flex;
     flex-direction: column;
-    /* border-radius: 10vw; */
 }
 
 .popup-overlay header{
     padding: 2vh 1vw;
     line-height: 1.7;
     background-color: rgb(197, 195, 195);
-    border-radius: 3vw;
+    border-radius: 1vw;
     
 }
 .popup-overlay header h1{
     opacity: 0.8;
     font-size: 6.3vw;
     text-align: center;
+}
+.popup-overlay header p{
+    opacity: 0.8;
+    font-size: 6vw;
+    font-weight: 600;
+    text-align: center;
+    width: 70vw;
+    /* margin: -2vh; */
 }
 .popup-overlay header input{
     border: none;
@@ -78,4 +85,43 @@
     padding: 3vw;
     background-color: rgb(255, 193, 7);
     border: none;
+}
+ .colse-popup-pin{
+    margin-top: 2vh;
+    width: 55vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5.5vw;
+    padding: 2vw;
+    background-color: rgb(255, 193, 7);
+    border: none;
+}
+
+.pin{
+    text-align: center;
+    font-size: 5vw;
+
+}
+
+.handle-pin-validation{
+margin: 0 -10vw;
+}
+
+.handle-pin-validation button{
+     background-color: rgb(255, 193, 7);
+    border: none;
+    width: 30vw;
+    font-size: 3.5vw;
+    padding: 0.6vh 0.8vw;
+    margin: 1.5vh 1vw;
+}
+.incorrect-pin{
+    color: red;
+    line-height: 1;
+    margin: 0 0 3vh;
+}
+.popup-overlay header .incorrect-pin p{
+    font-size: 4vw;
+
 }

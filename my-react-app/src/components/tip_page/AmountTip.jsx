@@ -3,9 +3,9 @@ import './amountTip.css'
 import Calculator from './Calculator'
 
 
-export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAmount, settipAmount }) => {
+export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAmount, settipAmount, setOpenCalculator, openCalculator }) => {
 
-    const [openCalculator, setOpenCalculator] = useState(false)
+    
     const [confirmTipModal, setConfirmTipModal] = useState(false)
 
     useEffect(() => {
@@ -48,13 +48,14 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
     }
 
     const resetTip = () => {
-        setChangeAmount(0)
-        settipAmount(0)
+        // setChangeAmount(0)
+        // settipAmount(0)
+        setCurrentPage("ROOT_PAY_APPLY_COMPS")
     }
 
     return (
         <div className="home">
-            <nav>
+            <nav onClick={()=>setCurrentPage("ROOT_PAY_APPLY_COMPS")}>
                 <i className="fa-solid fa-angle-left"></i>
             </nav>
 
@@ -123,10 +124,11 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
                     </i>
                     <div className="calc-frame">
                         <Calculator
-                            tipAmount={tipAmount}
+                            // tipAmount={tipAmount}
                             settipAmount={settipAmount}
                             setOpenCalculator={setOpenCalculator}
-                            amountWithDoller={amountWithDoller}
+                            title={"Tip"}
+                            // amountWithDoller={amountWithDoller}
                         />
                     </div>
                 </div>
