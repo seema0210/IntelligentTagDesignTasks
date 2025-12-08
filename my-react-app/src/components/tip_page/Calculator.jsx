@@ -7,6 +7,13 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
     const [EnteredTipAmt, setEnteredTipAmt] = useState(defaultVal)
     const [displayPin, setDisplayPin] = useState("____");
     const [incorrectPin, setIncorrectPin] = useState(false)
+    const apiObj = {
+        pin : 1234,
+        isComps : true,
+        isCard : true
+    }
+    console.log('apiObj', apiObj.pin);
+    
 
     const handleEnteredTipAmount = (e) => {
         let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
@@ -28,10 +35,11 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
         }
         setEnteredTipAmt(newVal)
     }
-    // console.log('EnteredTipAmt', EnteredTipAmt);
 
 
     const handleEnteredPin = (e) => {
+
+        setIncorrectPin(false) // 1st typed pin wrong then it will open the pin option
         let value = e.target.textContent;
 
         var currentVal;
@@ -60,35 +68,33 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
             setDisplayPin((prev) => prev.slice(0, -1))
         }
     }
-    console.log('displayPin', displayPin);
-    console.log('displayPin', typeof displayPin);
-    console.log('displayPin', displayPin.length);
-    console.log('EnteredTipAmt', EnteredTipAmt);
-
 
     const handleFinalTipAmt = () => {
         let finalValue = +EnteredTipAmt
         settipAmount(finalValue)
-        setOpenCalculator(false)
+        
 
-        if(title === "Pin"){
+        if (title === "Pin") {
+             if (apiObj.pin !== finalValue) {
+                setIncorrectPin(true)
+                return
+            }
+            if (apiObj.isCard) {
+                setCurrentPage("HAS_NO_COMPS")
+                return
+            }
+            if (apiObj.isCard) {
+                setCurrentPage("DISABLED_CARD")
+                return
+            }
+           
+            setIncorrectPin(false)
             setCurrentPage("WELCOME_PAGE")
         }
-        
-    }
 
-    const handleIncorrectPin = () => {
-        setIncorrectPin(true)
+        setOpenCalculator(false)
     }
-
-    const handleNoComps = () => {
-        setCurrentPage("HAS_NO_COMPS")
-    }
-
-    const handleDisabledCard = () => {
-        setCurrentPage("DISABLED_CARD")
-    }
-
+   
     return (
         <div>
             <div>
@@ -98,19 +104,19 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
                             title === "Tip" ?
                                 <h1> Enter the amount to tip</h1> :
                                 incorrectPin ?
-                                <div className='incorrect-pin'>
-                                    <p>That PIN doesn't match.</p> 
-                                    <p>Try again</p>
-                                </div> :
-                                <p>Enter your PIN</p>
+                                    <div className='incorrect-pin'>
+                                        <p>That PIN doesn't match.</p>
+                                        <p>Try again</p>
+                                    </div> :
+                                    <p>Enter your PIN</p>
                         }
                         {
                             title === "Tip" ?
                                 <input type="text"
                                     value={EnteredTipAmt} /> :
-                                    incorrectPin ?
+                                incorrectPin ?
                                     null :
-                                <p className='pin'>{displayPin}</p>
+                                    <p className='pin'>{displayPin}</p>
                         }
                     </header>
                     <div className="val-btn">
@@ -147,27 +153,6 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
                         onClick={handleFinalTipAmt}
                     >Done</button>
             }
-
-            {
-                title === "Pin"  &&
-                <div className='handle-pin-validation'>
-                <button type="button"
-                        className="handle-pin"
-                        onClick={handleIncorrectPin}
-                    >[incorrect pin]</button>
-                    <button type="button"
-                        className="handle-pin"
-                        onClick={handleNoComps}
-                    >[had no comps]</button>
-                    <button type="button"
-                        className="handle-pin"
-                        onClick={handleDisabledCard}
-                    >disabled card</button>
-
-            </div>
-            }
-
-            
 
             {
                 title === "Pin" &&
