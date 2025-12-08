@@ -5,9 +5,10 @@ html, body {
 }
 
 .swipe-club-card .swipe-head{
-    font-size: 5.6vw;
-    opacity: 0.8;
+    font-size: 6vw;
+    opacity: 0.7;
     margin: -11vh 0 6vh;
+    font-weight: 600;
  }
 
 .swipe-club-card{
@@ -80,6 +81,35 @@ html, body {
     border: none;
     font-size: 4.7vw;
     padding: 1vh 2vw;
-    width: 60vw;
-    /* opacity: 0.8; */
+    width: 50vw;
+    color: rgb(60, 60, 60);
+}
+
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;   
+  overflow: hidden;  
+}
+.calc-frame {
+  width: 80vw;
+  height: 80vh;
+  border: none;
+
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 3vh;
+  right: 5vw;
+  font-size: 5vw;
+  color: white;
+  cursor: pointer;
 }

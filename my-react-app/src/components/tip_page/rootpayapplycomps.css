@@ -1,0 +1,67 @@
+html, body {
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.root-page{
+    padding: 9vh 5vw;
+    text-align: center;
+    color: rgb(54, 54, 54);
+}
+
+.root-page h1{
+    font-size: 14vw;
+    margin: 3.5vh 0;
+}
+.root-page p{
+    font-size: 8.5vw;
+    background-color: rgb(255, 193, 7);
+    margin: 2.5vh 10vw;
+    padding: 1vh 0;
+}
+
+
+.icon-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+.icon-box {
+  width: 30vw;
+  height: 14vh;
+  background-color: rgb(255, 193, 7);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   
+  align-items: center;
+
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 6px;
+  position: relative;
+  overflow: hidden;             
+}
+
+.icon-box span{
+    padding-top: 1.2vh;
+    font-size: 3.7vw;
+}
+
+.icon {
+  font-size: 19vw;
+  position: absolute;
+  bottom: -6vw;  
+  color: #333;
+}
+.icon-card{
+    font-size: 14vw;
+  position: absolute;
+  bottom: -1.5vw;   
+  color: #333;
+}

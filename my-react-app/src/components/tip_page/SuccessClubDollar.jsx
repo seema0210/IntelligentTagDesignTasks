@@ -17,7 +17,7 @@ const SuccessClubDollar = ({setCurrentPage, clubDollerVal}) => {
                 </div>
 
             <div className='text'>
-                <button type='button' onClick={()=>setCurrentPage("AMOUNT_TIP")}>[RESET]</button>
+                <button type='button' onClick={()=>setCurrentPage("ROOT_PAY_APPLY_COMPS")}>[RESET]</button>
             </div>
         </div>
   )

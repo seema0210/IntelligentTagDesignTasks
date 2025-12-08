@@ -1,0 +1,45 @@
+.comps_and_handle .no_comps{
+    padding: 10vh 6vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.comps_and_handle .no_comps p{
+    padding: 9vh 0;
+    font-size: 5.7vw;
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.comps_and_handle .no_comps button{
+    width: 63vw;
+    margin: 1vh auto;
+    background-color: rgb(255, 193, 7);
+    border: none;
+    padding: 2vh;
+    font-size: 5.5vw;
+    color: rgb(52, 52, 52);
+}
+
+.disabled_card{
+     padding: 10vh 6vw;
+    text-align: center;
+}
+
+.disabled_card p {
+    color: red;
+    font-size: 5.5vw;
+    width: 60vw;
+    margin: 10vh auto;
+}
+
+.comps_and_handle .disabled_card button{
+    width: 63vw;
+    margin: 1vh auto;
+    background-color: rgb(255, 193, 7);
+    border: none;
+    padding: 1vh;
+    font-size: 5.5vw;
+    color: rgb(52, 52, 52);
+}
