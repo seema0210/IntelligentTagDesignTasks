@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import './calculator.css'
 
-const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) => {
+const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage, compCurrentBalance, apiObj }) => {
 
     let defaultVal = (title === "Tip") ? 0 : "_"
     const [EnteredTipAmt, setEnteredTipAmt] = useState(defaultVal)
     const [displayPin, setDisplayPin] = useState("____");
     const [incorrectPin, setIncorrectPin] = useState(false)
-    const apiObj = {
-        pin : 1234,
-        isComps : true,
-        isCard : true
-    }
-    console.log('apiObj', apiObj.pin);
+    console.log('apiObj at cal', apiObj);
+    
+
+    console.log('compCurrentBalance in calcy', compCurrentBalance);
     
 
     const handleEnteredTipAmount = (e) => {
@@ -77,9 +75,10 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
         if (title === "Pin") {
              if (apiObj.pin !== finalValue) {
                 setIncorrectPin(true)
+                setCurrentPage("HAS_NO_COMPS")
                 return
-            }
-            if (apiObj.isCard) {
+            } 
+            if (apiObj.isComps) {
                 setCurrentPage("HAS_NO_COMPS")
                 return
             }
@@ -89,7 +88,13 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage }) 
             }
            
             setIncorrectPin(false)
-            setCurrentPage("WELCOME_PAGE")
+
+            if(compCurrentBalance === "check_comb_balance"){
+                setCurrentPage("COMP_CURRENT_BALANCE")
+            }else{
+                setCurrentPage("WELCOME_PAGE")
+            }
+           
         }
 
         setOpenCalculator(false)

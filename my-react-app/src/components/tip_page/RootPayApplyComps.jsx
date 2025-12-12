@@ -1,7 +1,12 @@
 import React from 'react'
 import "./rootpayapplycomps.css"
 
-const RootPayApplyComps = ({setCurrentPage}) => {
+const RootPayApplyComps = ({setCurrentPage, setCompCurrentBalance}) => {
+
+    const handleCompBalance = () => {
+        setCompCurrentBalance("check_comb_balance")
+        setCurrentPage("SWIPE_CARD_PROCESS")
+    }
     return (
         <div className='root-page'>
             <h1>$100.00</h1>
@@ -13,7 +18,7 @@ const RootPayApplyComps = ({setCurrentPage}) => {
                     <i className="fa-regular fa-file-lines icon"></i>
                 </div>
 
-                <div className="icon-box">
+                <div className="icon-box" onClick={handleCompBalance}>
                     <span>CHECK COMP BALANCE</span>
                     <i className="fa-solid fa-credit-card icon-card"></i>
                 </div>

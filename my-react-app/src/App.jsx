@@ -11,26 +11,43 @@ import SwipeCardProcess from './components/tip_page/SwipeCardProcess'
 import SwipeFailed from './components/tip_page/SwipeFailed'
 import WelcomePage from './components/tip_page/WelcomePage'
 import CompsAndCardHandle from './components/tip_page/CompsAndCardHandle'
+import CompCurrentBalance from './components/tip_page/CompCurrentBalance'
 
 function App() {
 
   const [currentPage, setCurrentPage] = useState('ROOT_PAY_APPLY_COMPS')
   const [changeAmount, setChangeAmount] = useState(100)
   const [tipAmount, settipAmount] = useState(0.00)
+  const [pinValue, setPinValue] = useState('')
+
   const [openCalculator, setOpenCalculator] = useState(false)
   const [isSwipeFailed, setIsSwipeFailed] = useState(null)
 
   const [totalDue, setTotalDue] = useState(0)
   const [tryCreditCard, setTryCreditCard] = useState(0)
+  const [compCurrentBalance, setCompCurrentBalance] = useState(null)
 
    const tax = changeAmount * (3.54 / 100)
    const clubDollerVal = totalDue * (5/100);
+
+   const apiObj = {
+        pin : 1234,
+        isComps : false,
+        isCard : false
+    }
+
+   console.log('compCurrentBalance', compCurrentBalance);
+
+   console.log('pinValue for pn check', pinValue);
+   
+   
 
   const PageView = () => {
     switch (currentPage) {
       case "ROOT_PAY_APPLY_COMPS":
         return <RootPayApplyComps
          setCurrentPage={setCurrentPage} 
+         setCompCurrentBalance={setCompCurrentBalance}
          />
       case "COMPS":
         return <Comps setCurrentPage={setCurrentPage} />
@@ -54,6 +71,7 @@ function App() {
           settipAmount={settipAmount}
           setOpenCalculator={setOpenCalculator}
           openCalculator={openCalculator}
+          apiObj={apiObj}
         />
       case "PAYMENT_COMPLETE": 
         return <PaymentComplete
@@ -80,8 +98,12 @@ function App() {
       case "SWIPE_CARD_PROCESS":
         return <SwipeCardProcess
           setCurrentPage={setCurrentPage}
+          compCurrentBalance={compCurrentBalance}
+          setPinValue={setPinValue}
+          apiObj={apiObj}
+          
           // clubDollerVal={clubDollerVal}
-          setIsSwipeFailed={setIsSwipeFailed}
+          // setIsSwipeFailed={setIsSwipeFailed}
         />
       case "SWIPE_FAILED":
         return <SwipeFailed
@@ -97,6 +119,9 @@ function App() {
           setCurrentPage={setCurrentPage}
           setOpenCalculator={setOpenCalculator}
           openCalculator={openCalculator}
+          compCurrentBalance={compCurrentBalance}
+          pinValue={pinValue}
+          apiObj={apiObj}
           page="no_comps"
         />
       case "DISABLED_CARD":
@@ -105,6 +130,14 @@ function App() {
           setOpenCalculator={setOpenCalculator}
           openCalculator={openCalculator}
           page="disabled_card"
+        />
+      case "COMP_CURRENT_BALANCE":
+        return <CompCurrentBalance
+          setCurrentPage={setCurrentPage}
+          setOpenCalculator={setOpenCalculator}
+          // setOpenCalculator={setOpenCalculator}
+          // openCalculator={openCalculator}
+          // page="disabled_card"
         />
     }
   }
