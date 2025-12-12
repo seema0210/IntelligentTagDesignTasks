@@ -3,7 +3,8 @@ import './amountTip.css'
 import Calculator from './Calculator'
 
 
-export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAmount, settipAmount, setOpenCalculator, openCalculator }) => {
+export const AmountTip = ({ setCurrentPage, changeAmount, 
+    setChangeAmount, tipAmount, settipAmount, setOpenCalculator, openCalculator, apiObj }) => {
 
     
     const [confirmTipModal, setConfirmTipModal] = useState(false)
@@ -127,6 +128,7 @@ export const AmountTip = ({ setCurrentPage, changeAmount, setChangeAmount, tipAm
                             // tipAmount={tipAmount}
                             settipAmount={settipAmount}
                             setOpenCalculator={setOpenCalculator}
+                            apiObj={apiObj}
                             title={"Tip"}
                             // amountWithDoller={amountWithDoller}
                         />

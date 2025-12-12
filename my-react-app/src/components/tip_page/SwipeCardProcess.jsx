@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import "./swipecardprocess.css"
 import Calculator from './Calculator'
 
-const SwipeCardProcess = ({ SwipeClubCard, setCurrentPage, setIsSwipeFailed }) => {
+const SwipeCardProcess = ({ setCurrentPage, compCurrentBalance, setPinValue, apiObj }) => {
 
    const [pinPopup, setPinPopup] = useState(false)
-   const [pinValue, setPinValue] = useState('')
-
+   
     const handleFailedSwipw = () => {
         setCurrentPage("SWIPE_FAILED")
     }
 
-    console.log('pinValue', pinValue);
+    console.log('in child compCurrentBalance', compCurrentBalance);
+    // console.log('in child compCurrentBalance', pinValue);
     
 
     return (
@@ -56,6 +56,8 @@ const SwipeCardProcess = ({ SwipeClubCard, setCurrentPage, setIsSwipeFailed }) =
                             setOpenCalculator={setPinPopup}
                             title={'Pin'}
                             setCurrentPage={setCurrentPage}
+                            compCurrentBalance={compCurrentBalance}
+                            apiObj={apiObj}
                         />
                     </div>
                 </div>

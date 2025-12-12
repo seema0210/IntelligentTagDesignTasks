@@ -1,7 +1,12 @@
 import React from 'react'
 import './compsandcardhandle.css'
 
-const CompsAndCardHandle = ({ setOpenCalculator, openCalculator, page, setCurrentPage }) => {
+const CompsAndCardHandle = ({ setOpenCalculator, openCalculator, page, setCurrentPage, compCurrentBalance, pinValue, apiObj }) => {
+
+    console.log('compCurrentBalance at require', compCurrentBalance);
+    console.log('pinValue at require', pinValue);
+    console.log('pinValue.pin at require', apiObj.pin);
+
     return (
         <div><div className="comps_and_handle">
 
@@ -9,14 +14,28 @@ const CompsAndCardHandle = ({ setOpenCalculator, openCalculator, page, setCurren
                 page === "no_comps" ?
                     <div className='no_comps'>
                         <p>This card has no available comps.</p>
-                        <button
-                            type='button'
-                            onClick={() => setCurrentPage("SWIPE_CARD_PROCESS")}
-                        >Try Different Club Card</button>
-                        <button
-                         type='button'
-                            onClick={() => setCurrentPage("AMOUNT_TIP")}
-                        >Pay with Credit Card</button>
+                        {
+                            (compCurrentBalance === "check_comb_balance" && apiObj.pin !== pinValue) ?
+                                <>
+                                    <button
+                                        type='button'
+                                        onClick={() => setCurrentPage("ROOT_PAY_APPLY_COMPS")}
+                                    >Return to Start</button>
+
+                                </> :
+                                <>
+                                    <button
+                                        type='button'
+                                        onClick={() => setCurrentPage("SWIPE_CARD_PROCESS")}
+                                    >Try Different Club Card</button>
+                                    <button
+                                        type='button'
+                                        onClick={() => setCurrentPage("AMOUNT_TIP")}
+                                    >Pay with Credit Card</button>
+                                </>
+
+                        }
+
                     </div> :
                     <div className='disabled_card'>
                         <p>This Club card cannot be used at this time</p>
