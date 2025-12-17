@@ -130,6 +130,7 @@ export const AmountTip = ({ setCurrentPage, changeAmount,
                             setOpenCalculator={setOpenCalculator}
                             apiObj={apiObj}
                             title={"Tip"}
+                            compCurrentBalance={null}
                             // amountWithDoller={amountWithDoller}
                         />
                     </div>

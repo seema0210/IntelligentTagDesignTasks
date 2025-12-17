@@ -8,10 +8,11 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage, co
     const [displayPin, setDisplayPin] = useState("____");
     const [incorrectPin, setIncorrectPin] = useState(false)
     console.log('apiObj at cal', apiObj);
-    
+
 
     console.log('compCurrentBalance in calcy', compCurrentBalance);
-    
+    console.log('title in calcy', title);
+
 
     const handleEnteredTipAmount = (e) => {
         let value = e.target.textContent // textContent it will accept "." also number thats why it is used.
@@ -70,14 +71,22 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage, co
     const handleFinalTipAmt = () => {
         let finalValue = +EnteredTipAmt
         settipAmount(finalValue)
-        
+
 
         if (title === "Pin") {
-             if (apiObj.pin !== finalValue) {
+            if (apiObj.pin !== finalValue) {
+                // setIncorrectPin(true)
+                if(compCurrentBalance === "check_comb_balance" && apiObj.isComps){
+                    // if(apiObj.isComps){
+                        // setIncorrectPin(true)
+                        // return
+                    // }
+                    setCurrentPage("HAS_NO_COMPS") 
+                    return
+                }
                 setIncorrectPin(true)
-                setCurrentPage("HAS_NO_COMPS")
                 return
-            } 
+            }
             if (apiObj.isComps) {
                 setCurrentPage("HAS_NO_COMPS")
                 return
@@ -86,20 +95,24 @@ const Calculator = ({ settipAmount, setOpenCalculator, title, setCurrentPage, co
                 setCurrentPage("DISABLED_CARD")
                 return
             }
-           
+
             setIncorrectPin(false)
 
-            if(compCurrentBalance === "check_comb_balance"){
+            if (compCurrentBalance === "check_comb_balance") {
                 setCurrentPage("COMP_CURRENT_BALANCE")
-            }else{
-                setCurrentPage("WELCOME_PAGE")
+                return
             }
-           
+            if(apiObj.pin === finalValue){
+                setCurrentPage("WELCOME_PAGE")
+                return
+            }
+
         }
 
         setOpenCalculator(false)
+        setCurrentPage("WELCOME_PAGE")
     }
-   
+
     return (
         <div>
             <div>

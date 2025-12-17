@@ -1,7 +1,7 @@
 import React from 'react'
 import "./swipefailed.css"
 
-const SwipeFailed = ({setCurrentPage}) => {
+const SwipeFailed = ({ setCurrentPage }) => {
     return (
         <div >
             <nav onClick={() => setCurrentPage("SWIPE_CARD_PROCESS")}>
@@ -10,9 +10,9 @@ const SwipeFailed = ({setCurrentPage}) => {
             <div className='swipe-failed'>
                 <p>We didn't detect a Club card. Tap "Retry" to try again</p>
 
-                    <button type='button' onClick={() => setCurrentPage("SWIPE_CARD_PROCESS")}>Retry</button>
+                <button type='button' onClick={() => setCurrentPage("SWIPE_CARD_PROCESS")}>Retry</button>
             </div>
-             <div className='text'>
+            <div className='text'>
                 <button type='button' onClick={() => setCurrentPage("ROOT_PAY_APPLY_COMPS")}>[RESET]</button>
             </div>
         </div>

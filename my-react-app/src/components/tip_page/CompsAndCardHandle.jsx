@@ -5,7 +5,7 @@ const CompsAndCardHandle = ({ setOpenCalculator, openCalculator, page, setCurren
 
     console.log('compCurrentBalance at require', compCurrentBalance);
     console.log('pinValue at require', pinValue);
-    console.log('pinValue.pin at require', apiObj.pin);
+    // console.log('pinValue.pin at require', apiObj.pin);
 
     return (
         <div><div className="comps_and_handle">

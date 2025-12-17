@@ -33,7 +33,7 @@ function App() {
    const apiObj = {
         pin : 1234,
         isComps : false,
-        isCard : false
+        isCard : true
     }
 
    console.log('compCurrentBalance', compCurrentBalance);

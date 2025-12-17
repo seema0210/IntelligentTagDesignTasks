@@ -4,15 +4,14 @@
 }
 .swipe-failed p{
     color: red;
-    font-size: 6vw;
+    font-size: 5.8vw;
 }
 .swipe-failed button{
     font-size: 8vw;
     background-color: rgb(255, 193, 7);
-    /* margin: 2.5vh 10vw; */
     padding: 1.2vh 0;
     border: none;
-    width: 55vw;
+    width: 61vw;
     margin: 5vh 0;
     color: rgb(61, 61, 61);
 }
